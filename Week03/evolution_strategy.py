@@ -50,20 +50,28 @@ def evolution(population,lamb,generations):
 
     return population
 
+#write result to a text file
 def write_file(file, description, data):
     file.write(description)
     file.write(str(data))
     file.write("\n")
 
+def increase_lambda(population,lamb,generations,max_lambda,filename):
+    file = open(filename, "w")
+    while lamb < max_lambda:
+        write_file(file, "Generations:", generations)
+        write_file(file, "Lambda:", lamb)
+        write_file(file, "Start population:", population)
+        write_file(file, "Final population" , evolution(population, lamb, generations))
+        write_file(file, "------------------------------------------", "\n")
+        lamb+=1
+    file.close()
+
 def main():
     population = [0,1,2,3,4]
-    lamb = 10
-    filename = "result.txt"
-    file = open(filename, "w")
+    lamb = 3
 
-    write_file(file, "Start population:", population)
-    write_file(file, "Population after " +str(lamb) + " generations:" , evolution(population, lamb, 3))
+    increase_lambda(population,lamb,3,20,"increase_lambda.txt")
 
-    file.close()
 
 main()
