@@ -6,10 +6,10 @@ from write_to_file import *
 def plot_wrong_outputs(wrong_outputs,show_figure,filename):
     x = np.linspace(1,len(wrong_outputs),len(wrong_outputs))
     plt.plot(x,wrong_outputs)
-    plt.savefig(filename+".png", format="png")
     plt.title(filename)
     plt.xlabel("Epoches")
     plt.ylabel("Wrong Outputs")
+    plt.savefig(filename+".png", format="png")
     if show_figure:
         plt.show()
 
