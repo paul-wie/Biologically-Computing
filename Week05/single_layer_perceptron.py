@@ -50,16 +50,32 @@ def train(matrix, weights,nu_epoch,filename):
 
 
 def main():
-    data_and = [    #bias   i1  i2  y
+    data_and = [    #bias    i1      i2          y
                     [1.00,   0.00,  0.00,     0.00],
                     [1.00,   1.00,  0.00,     0.00],
                     [1.00,   0.00,  1.00,     0.00],
                     [1.00,   1.00,  1.00,     1.00]
                 ]
+    data_nand = [
+                    #bias    i1      i2          y
+                    [1.00,   0.00,  0.00,     1.00],
+                    [1.00,   1.00,  0.00,     1.00],
+                    [1.00,   0.00,  1.00,     1.00],
+                    [1.00,   1.00,  1.00,     0.00]
+                ]
+    data_nor = [
+                    #bias    i1      i2          y
+                    [1.00,   0.00,  0.00,     0.00],
+                    [1.00,   1.00,  0.00,     1.00],
+                    [1.00,   0.00,  1.00,     1.00],
+                    [1.00,   1.00,  1.00,     1.00]
+                ]
     weights = [2.00,1.00,1.00]
     nu_epoch = 10
-    filename = "and_perceptron_"+str(nu_epoch)
-    train(data_and,weights, nu_epoch, filename)
+    filename_and = "and_perceptron_"+str(nu_epoch)
+    filename_nand = "nand_perceptron_"+str(nu_epoch)
+    filename_nor = "nor_perceptron_"+str(nu_epoch)
+    train(data_nor,weights, nu_epoch, filename_nor)
 
 
 
