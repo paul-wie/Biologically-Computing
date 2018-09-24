@@ -56,6 +56,7 @@ def write_file(file, description, data):
     file.write(str(data))
     file.write("\n")
 
+#increase lambda on the same population
 def increase_lambda(population,lamb,generations,max_lambda,filename):
     file = open(filename, "w")
     while lamb < max_lambda:

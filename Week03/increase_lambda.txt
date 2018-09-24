@@ -1,79 +1,79 @@
 Generations:3
 Lambda:3
 Start population:[0, 1, 2, 3, 4]
-Final population[4, 3, 3.0, 3.0, 2.875]
+Final population[4, 4.0, 3.625, 3.25, 3.25]
 ------------------------------------------
 
 Generations:3
 Lambda:4
 Start population:[0, 1, 2, 3, 4]
-Final population[4, 3, 3.0, 2.875, 2.875]
+Final population[4, 3.5, 3.25, 3.25, 3]
 ------------------------------------------
 
 Generations:3
 Lambda:5
 Start population:[0, 1, 2, 3, 4]
-Final population[4, 3, 3.0, 3.0, 3.0]
+Final population[4, 3.5, 3.5, 3.5, 3.5]
 ------------------------------------------
 
 Generations:3
 Lambda:6
 Start population:[0, 1, 2, 3, 4]
-Final population[4, 3, 3.0, 3.0, 3.0]
+Final population[4, 4.0, 4.0, 4.0, 3.875]
 ------------------------------------------
 
 Generations:3
 Lambda:7
 Start population:[0, 1, 2, 3, 4]
-Final population[4, 4.0, 4.0, 4.0, 3.75]
+Final population[4, 4.0, 4.0, 4.0, 4.0]
 ------------------------------------------
 
 Generations:3
 Lambda:8
 Start population:[0, 1, 2, 3, 4]
-Final population[4, 3.5, 3.5, 3.5, 3.5]
+Final population[4, 4.0, 4.0, 4.0, 4.0]
 ------------------------------------------
 
 Generations:3
 Lambda:9
 Start population:[0, 1, 2, 3, 4]
-Final population[4, 3.5, 3.5, 3.5, 3.5]
+Final population[4, 3.5, 3.5, 3.375, 3.25]
 ------------------------------------------
 
 Generations:3
 Lambda:10
 Start population:[0, 1, 2, 3, 4]
-Final population[4, 3.5, 3.5, 3.5, 3.5]
+Final population[4, 3.5, 3.5, 3.5, 3.375]
 ------------------------------------------
 
 Generations:3
 Lambda:11
 Start population:[0, 1, 2, 3, 4]
-Final population[4, 3, 3.0, 3.0, 3.0]
+Final population[4, 3.5, 3.375, 3.375, 3.25]
 ------------------------------------------
 
 Generations:3
 Lambda:12
 Start population:[0, 1, 2, 3, 4]
-Final population[4, 4.0, 3.875, 3.875, 3.875]
+Final population[4, 4.0, 4.0, 4.0, 4.0]
 ------------------------------------------
 
 Generations:3
 Lambda:13
 Start population:[0, 1, 2, 3, 4]
-Final population[4, 3.5, 3.5, 3.5, 3.5]
+Final population[4, 4.0, 4.0, 4.0, 4.0]
 ------------------------------------------
 
 Generations:3
 Lambda:14
 Start population:[0, 1, 2, 3, 4]
-Final population[4, 3, 3.0, 3.0, 3.0]
+Final population[4, 4.0, 4.0, 4.0, 4.0]
 ------------------------------------------
 
 Generations:3
 Lambda:15
 Start population:[0, 1, 2, 3, 4]
-Final population[4, 3.5, 3.5, 3.5, 3.5]
+Final population[4, 4.0, 3.875, 3.875, 3.75]
 ------------------------------------------
 
 Generations:3
