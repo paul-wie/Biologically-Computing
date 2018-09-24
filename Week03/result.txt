@@ -1,0 +1,2 @@
+Start population:[0, 1, 2, 3, 4]
+Population after 10 generations:[4, 3, 3.0, 3.0, 3.0]
