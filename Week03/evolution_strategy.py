@@ -1,11 +1,5 @@
 import random as rand
 
-def f1(x):
-    return x
-
-def f2(x):
-    return x**2
-
 #parent selection, lambiform random
 #return: two randomly selected parents
 def parent_selection(population):
@@ -59,7 +53,7 @@ def write_file(file, description, data):
 #increase lambda on the same population
 def increase_lambda(population,lamb,generations,max_lambda,filename):
     file = open(filename, "w")
-    while lamb < max_lambda:
+    while lamb <= max_lambda:
         write_file(file, "Generations:", generations)
         write_file(file, "Lambda:", lamb)
         write_file(file, "Start population:", population)
@@ -68,10 +62,23 @@ def increase_lambda(population,lamb,generations,max_lambda,filename):
         lamb+=1
     file.close()
 
+def increase_population(population, lamb, generations, max_generations,filename):
+    file = open(filename, "w")
+    while generations <= max_generations:
+        write_file(file, "Generations:", generations)
+        write_file(file, "Lambda:", lamb)
+        write_file(file, "Start population:", population)
+        write_file(file, "Final population" , evolution(population, lamb, generations))
+        write_file(file, "------------------------------------------", "\n")
+        generations+=1
+    file.close()
+
+
 def main():
     population = [0,1,2,3,4]
     lamb = 3
-    increase_lambda(population,lamb,3,20,"increase_lambda.txt")
+    #increase_lambda(population,lamb,3,20,"increase_lambda.txt")
+    increase_population(population,lamb,1,30,"increase_population.txt")
 
 
 main()

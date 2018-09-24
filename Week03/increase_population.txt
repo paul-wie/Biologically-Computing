@@ -1,0 +1,180 @@
+Generations:1
+Lambda:3
+Start population:[0, 1, 2, 3, 4]
+Final population[4, 4.0, 3, 2.5, 2]
+------------------------------------------
+
+Generations:2
+Lambda:3
+Start population:[0, 1, 2, 3, 4]
+Final population[4, 3, 3.0, 3.0, 3.0]
+------------------------------------------
+
+Generations:3
+Lambda:3
+Start population:[0, 1, 2, 3, 4]
+Final population[4, 3, 2.5, 2.5, 2.5]
+------------------------------------------
+
+Generations:4
+Lambda:3
+Start population:[0, 1, 2, 3, 4]
+Final population[4, 3, 3.0, 2.9375, 2.875]
+------------------------------------------
+
+Generations:5
+Lambda:3
+Start population:[0, 1, 2, 3, 4]
+Final population[4, 3, 2.875, 2.75, 2.75]
+------------------------------------------
+
+Generations:6
+Lambda:3
+Start population:[0, 1, 2, 3, 4]
+Final population[4, 3.5, 3.5, 3.5, 3.5]
+------------------------------------------
+
+Generations:7
+Lambda:3
+Start population:[0, 1, 2, 3, 4]
+Final population[4, 4.0, 3.96875, 3.9375, 3.9375]
+------------------------------------------
+
+Generations:8
+Lambda:3
+Start population:[0, 1, 2, 3, 4]
+Final population[4, 3.5, 3.5, 3.5, 3.5]
+------------------------------------------
+
+Generations:9
+Lambda:3
+Start population:[0, 1, 2, 3, 4]
+Final population[4, 3.5, 3.4921875, 3.4921875, 3.484375]
+------------------------------------------
+
+Generations:10
+Lambda:3
+Start population:[0, 1, 2, 3, 4]
+Final population[4, 3, 3.0, 3.0, 3.0]
+------------------------------------------
+
+Generations:11
+Lambda:3
+Start population:[0, 1, 2, 3, 4]
+Final population[4, 3, 3.0, 3.0, 3.0]
+------------------------------------------
+
+Generations:12
+Lambda:3
+Start population:[0, 1, 2, 3, 4]
+Final population[4, 3, 2.98046875, 2.9609375, 2.9609375]
+------------------------------------------
+
+Generations:13
+Lambda:3
+Start population:[0, 1, 2, 3, 4]
+Final population[4, 3, 3.0, 3.0, 3.0]
+------------------------------------------
+
+Generations:14
+Lambda:3
+Start population:[0, 1, 2, 3, 4]
+Final population[4, 3.5, 3.46875, 3.46875, 3.46875]
+------------------------------------------
+
+Generations:15
+Lambda:3
+Start population:[0, 1, 2, 3, 4]
+Final population[4, 4.0, 4.0, 4.0, 4.0]
+------------------------------------------
+
+Generations:16
+Lambda:3
+Start population:[0, 1, 2, 3, 4]
+Final population[4, 4.0, 4.0, 4.0, 4.0]
+------------------------------------------
+
+Generations:17
+Lambda:3
+Start population:[0, 1, 2, 3, 4]
+Final population[4, 3, 3.0, 3.0, 3.0]
+------------------------------------------
+
+Generations:18
+Lambda:3
+Start population:[0, 1, 2, 3, 4]
+Final population[4, 4.0, 4.0, 4.0, 4.0]
+------------------------------------------
+
+Generations:19
+Lambda:3
+Start population:[0, 1, 2, 3, 4]
+Final population[4, 3.5, 3.5, 3.5, 3.5]
+------------------------------------------
+
+Generations:20
+Lambda:3
+Start population:[0, 1, 2, 3, 4]
+Final population[4, 4.0, 4.0, 4.0, 4.0]
+------------------------------------------
+
+Generations:21
+Lambda:3
+Start population:[0, 1, 2, 3, 4]
+Final population[4, 3, 3.0, 3.0, 3.0]
+------------------------------------------
+
+Generations:22
+Lambda:3
+Start population:[0, 1, 2, 3, 4]
+Final population[4, 4.0, 4.0, 4.0, 4.0]
+------------------------------------------
+
+Generations:23
+Lambda:3
+Start population:[0, 1, 2, 3, 4]
+Final population[4, 3, 3.0, 3.0, 3.0]
+------------------------------------------
+
+Generations:24
+Lambda:3
+Start population:[0, 1, 2, 3, 4]
+Final population[4, 3, 3.0, 3.0, 3.0]
+------------------------------------------
+
+Generations:25
+Lambda:3
+Start population:[0, 1, 2, 3, 4]
+Final population[4, 3, 3.0, 3.0, 3.0]
+------------------------------------------
+
+Generations:26
+Lambda:3
+Start population:[0, 1, 2, 3, 4]
+Final population[4, 3.5, 3.5, 3.5, 3.5]
+------------------------------------------
+
+Generations:27
+Lambda:3
+Start population:[0, 1, 2, 3, 4]
+Final population[4, 3, 3.0, 3.0, 3.0]
+------------------------------------------
+
+Generations:28
+Lambda:3
+Start population:[0, 1, 2, 3, 4]
+Final population[4, 3.5, 3.5, 3.5, 3.5]
+------------------------------------------
+
+Generations:29
+Lambda:3
+Start population:[0, 1, 2, 3, 4]
+Final population[4, 4.0, 4.0, 4.0, 4.0]
+------------------------------------------
+
+Generations:30
+Lambda:3
+Start population:[0, 1, 2, 3, 4]
+Final population[4, 3.5, 3.5, 3.5, 3.5]
+------------------------------------------
+
