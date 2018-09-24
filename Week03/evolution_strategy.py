@@ -61,6 +61,7 @@ def increase_lambda(population,lamb,generations,max_lambda,filename):
         write_file(file, "------------------------------------------", "\n")
         lamb+=1
     file.close()
+    #123
 
 def increase_population(population, lamb, generations, max_generations,filename):
     file = open(filename, "w")
