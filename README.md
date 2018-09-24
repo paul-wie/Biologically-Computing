@@ -2,4 +2,4 @@
 
 
 ## Week 03
--Evolution Strategy to maximize simple function
+- Evolution Strategy to maximize simple function
