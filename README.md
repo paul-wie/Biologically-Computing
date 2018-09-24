@@ -1,4 +1,5 @@
 # Biologically-Computing
 
 
-## Evolution strategy
+## Week 03
+*Evolution Strategy to maximize simple function
