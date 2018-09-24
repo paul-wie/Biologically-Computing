@@ -1,0 +1,70 @@
+Epoch: 0
+Data set / Weights / Output / True Output:	[1.0, 0.0, 0.0, 0.0]	[2.0, 1.0, 1.0]		1.0/0.0
+Data set / Weights / Output / True Output:	[1.0, 1.0, 0.0, 0.0]	[1.75, 1.0, 1.0]		1.0/0.0
+Data set / Weights / Output / True Output:	[1.0, 0.0, 1.0, 0.0]	[1.5, 0.75, 1.0]		1.0/0.0
+Data set / Weights / Output / True Output:	[1.0, 1.0, 1.0, 1.0]	[1.25, 0.75, 0.75]		1.0/1.0
+Wrong outputs in this generation: 3
+-------------------------------------- 
+Epoch: 1
+Data set / Weights / Output / True Output:	[1.0, 0.0, 0.0, 0.0]	[1.25, 0.75, 0.75]		1.0/0.0
+Data set / Weights / Output / True Output:	[1.0, 1.0, 0.0, 0.0]	[1.0, 0.75, 0.75]		1.0/0.0
+Data set / Weights / Output / True Output:	[1.0, 0.0, 1.0, 0.0]	[0.75, 0.5, 0.75]		1.0/0.0
+Data set / Weights / Output / True Output:	[1.0, 1.0, 1.0, 1.0]	[0.5, 0.5, 0.5]		1.0/1.0
+Wrong outputs in this generation: 3
+-------------------------------------- 
+Epoch: 2
+Data set / Weights / Output / True Output:	[1.0, 0.0, 0.0, 0.0]	[0.5, 0.5, 0.5]		1.0/0.0
+Data set / Weights / Output / True Output:	[1.0, 1.0, 0.0, 0.0]	[0.25, 0.5, 0.5]		1.0/0.0
+Data set / Weights / Output / True Output:	[1.0, 0.0, 1.0, 0.0]	[0.0, 0.25, 0.5]		1.0/0.0
+Data set / Weights / Output / True Output:	[1.0, 1.0, 1.0, 1.0]	[-0.25, 0.25, 0.25]		1.0/1.0
+Wrong outputs in this generation: 3
+-------------------------------------- 
+Epoch: 3
+Data set / Weights / Output / True Output:	[1.0, 0.0, 0.0, 0.0]	[-0.25, 0.25, 0.25]		0/0.0
+Data set / Weights / Output / True Output:	[1.0, 1.0, 0.0, 0.0]	[-0.25, 0.25, 0.25]		1.0/0.0
+Data set / Weights / Output / True Output:	[1.0, 0.0, 1.0, 0.0]	[-0.5, 0.0, 0.25]		0/0.0
+Data set / Weights / Output / True Output:	[1.0, 1.0, 1.0, 1.0]	[-0.5, 0.0, 0.25]		0/1.0
+Wrong outputs in this generation: 2
+-------------------------------------- 
+Epoch: 4
+Data set / Weights / Output / True Output:	[1.0, 0.0, 0.0, 0.0]	[-0.25, 0.25, 0.5]		0/0.0
+Data set / Weights / Output / True Output:	[1.0, 1.0, 0.0, 0.0]	[-0.25, 0.25, 0.5]		1.0/0.0
+Data set / Weights / Output / True Output:	[1.0, 0.0, 1.0, 0.0]	[-0.5, 0.0, 0.5]		1.0/0.0
+Data set / Weights / Output / True Output:	[1.0, 1.0, 1.0, 1.0]	[-0.75, 0.0, 0.25]		0/1.0
+Wrong outputs in this generation: 3
+-------------------------------------- 
+Epoch: 5
+Data set / Weights / Output / True Output:	[1.0, 0.0, 0.0, 0.0]	[-0.5, 0.25, 0.5]		0/0.0
+Data set / Weights / Output / True Output:	[1.0, 1.0, 0.0, 0.0]	[-0.5, 0.25, 0.5]		0/0.0
+Data set / Weights / Output / True Output:	[1.0, 0.0, 1.0, 0.0]	[-0.5, 0.25, 0.5]		1.0/0.0
+Data set / Weights / Output / True Output:	[1.0, 1.0, 1.0, 1.0]	[-0.75, 0.25, 0.25]		0/1.0
+Wrong outputs in this generation: 2
+-------------------------------------- 
+Epoch: 6
+Data set / Weights / Output / True Output:	[1.0, 0.0, 0.0, 0.0]	[-0.5, 0.5, 0.5]		0/0.0
+Data set / Weights / Output / True Output:	[1.0, 1.0, 0.0, 0.0]	[-0.5, 0.5, 0.5]		1.0/0.0
+Data set / Weights / Output / True Output:	[1.0, 0.0, 1.0, 0.0]	[-0.75, 0.25, 0.5]		0/0.0
+Data set / Weights / Output / True Output:	[1.0, 1.0, 1.0, 1.0]	[-0.75, 0.25, 0.5]		1.0/1.0
+Wrong outputs in this generation: 1
+-------------------------------------- 
+Epoch: 7
+Data set / Weights / Output / True Output:	[1.0, 0.0, 0.0, 0.0]	[-0.75, 0.25, 0.5]		0/0.0
+Data set / Weights / Output / True Output:	[1.0, 1.0, 0.0, 0.0]	[-0.75, 0.25, 0.5]		0/0.0
+Data set / Weights / Output / True Output:	[1.0, 0.0, 1.0, 0.0]	[-0.75, 0.25, 0.5]		0/0.0
+Data set / Weights / Output / True Output:	[1.0, 1.0, 1.0, 1.0]	[-0.75, 0.25, 0.5]		1.0/1.0
+Wrong outputs in this generation: 0
+-------------------------------------- 
+Epoch: 8
+Data set / Weights / Output / True Output:	[1.0, 0.0, 0.0, 0.0]	[-0.75, 0.25, 0.5]		0/0.0
+Data set / Weights / Output / True Output:	[1.0, 1.0, 0.0, 0.0]	[-0.75, 0.25, 0.5]		0/0.0
+Data set / Weights / Output / True Output:	[1.0, 0.0, 1.0, 0.0]	[-0.75, 0.25, 0.5]		0/0.0
+Data set / Weights / Output / True Output:	[1.0, 1.0, 1.0, 1.0]	[-0.75, 0.25, 0.5]		1.0/1.0
+Wrong outputs in this generation: 0
+-------------------------------------- 
+Epoch: 9
+Data set / Weights / Output / True Output:	[1.0, 0.0, 0.0, 0.0]	[-0.75, 0.25, 0.5]		0/0.0
+Data set / Weights / Output / True Output:	[1.0, 1.0, 0.0, 0.0]	[-0.75, 0.25, 0.5]		0/0.0
+Data set / Weights / Output / True Output:	[1.0, 0.0, 1.0, 0.0]	[-0.75, 0.25, 0.5]		0/0.0
+Data set / Weights / Output / True Output:	[1.0, 1.0, 1.0, 1.0]	[-0.75, 0.25, 0.5]		1.0/1.0
+Wrong outputs in this generation: 0
+-------------------------------------- 
