@@ -71,7 +71,6 @@ def increase_lambda(population,lamb,generations,max_lambda,filename):
 def main():
     population = [0,1,2,3,4]
     lamb = 3
-
     increase_lambda(population,lamb,3,20,"increase_lambda.txt")
 
 
