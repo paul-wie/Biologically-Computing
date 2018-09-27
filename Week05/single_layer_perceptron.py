@@ -33,7 +33,7 @@ def recalculate_weights(inputs,weights):
 
 #train the perceptron by adapting the weight in several epochs
 def train(matrix, weights,nu_epoch,filename):
-    file = open(filename,"w")
+    file = open(filename,"w")nu
     wrong_outputs = [0] * nu_epoch
     for epoch in range(nu_epoch):
         write_begin(file,epoch)
