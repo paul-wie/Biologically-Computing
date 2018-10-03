@@ -1,7 +1,3 @@
-"""
-    This pre-code is a nice starting point, but you can
-    change it to fit your needs.
-"""
 import numpy as np
 
 class mlp:
