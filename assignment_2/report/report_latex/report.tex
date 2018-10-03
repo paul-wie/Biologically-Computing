@@ -53,20 +53,20 @@
 	\subsection{Initialization}
 	The function \textit{ \_\_init\_\_(self, inputs, targets, nhidden)} has three important parameter that we need to initialize the Multilayer Perceptron. \\
 	As the input data is given as a vector, it is a good choice to create two 2D-Array for the two weight layers. As the parameters \textit{inputs} and \textit{targets} have the type \textit{$<$class 'numpy.ndarray'$>$}, it is a good idea to work only with numpy arrays. \\
-	\subsubsection{Dimension of the weight layers}
+	\subsubsection{Dimension of the weight matrix}
 		\begin{itemize}
-		\item weight\_layer\_1: \\
+		\item weight\_matrix\_1: \\
 		The input vector in (1) has of course a size of 40 ($len(inputs[n]), n \in [len(inputs) -1] \cup \{0\}$). But we need to add the \textit{bias\_value -1} that can be seen in Figure 2. That means: \\ 
 		\begin{center}
 			\begin{equation}
-			 \textit{weight\_layer\_1} \in \mathbb{R}^{41 \times nhidden} 
+			 \textit{weight\_matrix\_1} \in \mathbb{R}^{41 \times nhidden} 
 			\end{equation}  
 		\end{center}
-		\item weight\_layer\_2: \\
+		\item weight\_matrix\_2: \\
 		There are \textit{nhidden} hidden nodes and 8 ($len(targets[n]), n \in [len(targets) -1] \cup \{0\}$) exit nodes. So we also need to take into account the \textit{bias\_value -1}. That means: \\
 		\begin{center}
 			\begin{equation}
-			\textit{weight\_layer\_2} \in \mathbb{R}^{(nhidden+1) \times 8} 
+			\textit{weight\_matrix\_2} \in \mathbb{R}^{(nhidden+1) \times 8} 
 			\end{equation}  
 		\end{center}
 		

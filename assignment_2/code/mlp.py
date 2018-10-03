@@ -9,9 +9,9 @@ class mlp:
         # type(inputs) = type(targets) = <class 'numpy.ndarray'>
         #so we need numpy to modify the arrays
         # height: 41, width: 12 (nhidden = 12)
-        self.weight_layer_1 = create_random_array(len(inputs[0])+1,nhidden)
+        self.weight_matrix_1 = create_random_array(len(inputs[0])+1,nhidden)
         #height 13, width: 8 (nhidden =12)
-        self.weight_layer_2 = create_random_array(nhidden+1,len(targets[0]))
+        self.weight_matrix_2 = create_random_array(nhidden+1,len(targets[0]))
 
         print('To be implemented')
 

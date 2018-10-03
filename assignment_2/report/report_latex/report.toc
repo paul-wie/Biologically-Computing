@@ -3,4 +3,4 @@
 \contentsline {subsection}{\numberline {1.2}Training Data}{3}
 \contentsline {section}{\numberline {2}Implementation}{3}
 \contentsline {subsection}{\numberline {2.1}Initialization}{3}
-\contentsline {subsubsection}{\numberline {2.1.1}Dimension of the weight layers}{3}
+\contentsline {subsubsection}{\numberline {2.1.1}Dimension of the weight matrix}{3}
