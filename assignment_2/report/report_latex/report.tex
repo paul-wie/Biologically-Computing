@@ -21,13 +21,13 @@
 	\begin{center}
 		\includegraphics[width=0.4\linewidth]{pictures/hand}
 		\\
-		Possible motions \footnote{http://folk.uio.no/kyrrehg/pf/papers/glette-ahs08.pdf}
+		Figure 1: Possible motions \footnote{http://folk.uio.no/kyrrehg/pf/papers/glette-ahs08.pdf}
 		\\
 	\end{center}
 	\begin{center}
 		\includegraphics[width=0.7\linewidth]{pictures/mlp}
 		\\
-		Multilayer Perceptron for our problem \footnote{https://www.uio.no/studier/emner/matnat/ifi/INF3490/h18/assignments/assignment-2/assignment\_2.pdf}
+		Figure 2: Multilayer Perceptron for our problem \footnote{https://www.uio.no/studier/emner/matnat/ifi/INF3490/h18/assignments/assignment-2/assignment\_2.pdf}
 		\\
 	\end{center}
 	We build a Multilayer Perceptron with 40 entry nodes, that means one node for each input. Then there is one hidden layer with a various number of hidden nodes. For classifying the input, there are 8 output nodes corresponding to the 8 hand motions. We only use one hidden layer to solve this problem.
@@ -35,13 +35,45 @@
 	\subsection{Training Data}							%training data
 	For each input vector:
 	\begin{center}
-		$ input = [i_1,i_2,i_3,i_4,...,i_{40}], i_n \in  \mathbb{R},n \in [40]  $
+
+		\begin{equation}
+		input = [i_1,i_2,i_3,i_4,...,i_{40}], i_n \in  \mathbb{R},n \in [40]
+		\end{equation}
 	\end{center}
 	we have a target output vector:
 	\begin{center}
-		$ output = [c_1,c_2,c_3,c_4,...,c_8], c_n \in \{0,1\}, n \in [8],\sum_{n=1}^{8} c_n  = 1   $
+		\begin{equation}
+		 output = [c_1,c_2,c_3,c_4,...,c_8], c_n \in \{0,1\}, n \in [8],\sum_{n=1}^{8} c_n  = 1 
+		 \end{equation}  
 	\end{center}
 	That means, forwarding the input should result in the given target vector. 
-	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		%Implementation
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		%IMPLEMENTATION
+	\section{Implementation}
+	The file \textit{mlp.py} contains the class mlp. There are 5 functions that i will explain in detail.
+	\subsection{Initialization}
+	The function \textit{ \_\_init\_\_(self, inputs, targets, nhidden)} has three important parameter that we need to initialize the Multilayer Perceptron. \\
+	As the input data is given as a vector, it is a good choice to create two 2D-Array for the two weight layers. As the parameters \textit{inputs} and \textit{targets} have the type \textit{$<$class 'numpy.ndarray'$>$}, it is a good idea to work only with numpy arrays. \\
+	\subsubsection{Dimension of the weight layers}
+		\begin{itemize}
+		\item weight\_layer\_1: \\
+		The input vector in (1) has of course a size of 40 ($len(inputs[n]), n \in [len(inputs) -1] \cup \{0\}$). But we need to add the \textit{bias\_value -1} that can be seen in Figure 2. That means: \\ 
+		\begin{center}
+			\begin{equation}
+			 \textit{weight\_layer\_1} \in \mathbb{R}^{41 \times nhidden} 
+			\end{equation}  
+		\end{center}
+		\item weight\_layer\_2: \\
+		There are \textit{nhidden} hidden nodes and 8 ($len(targets[n]), n \in [len(targets) -1] \cup \{0\}$) exit nodes. So we also need to take into account the \textit{bias\_value -1}. That means: \\
+		\begin{center}
+			\begin{equation}
+			\textit{weight\_layer\_2} \in \mathbb{R}^{nhidden+1 \times 8} 
+			\end{equation}  
+		\end{center}
+		
+	\end{itemize} 
+
+		
+	 
+	
 	
 \end{document}
