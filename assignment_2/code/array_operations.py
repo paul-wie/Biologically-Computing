@@ -16,7 +16,7 @@ def create_random_matrix(height, width):
 #vector matrix multiplication
 def vec_matr_mult(vec,matr):
     if len(vec) != len(matr):
-        print("Vector and matrx do not have the same dimension")
+        print("Vector and matrix do not have the same dimension")
         sys.exit(0)
     else:
         output = np.zeros(len(matr[0]))
