@@ -1,7 +1,7 @@
 import numpy as np
 import sys
 import random as rand
-
+#--------------------------------------------------------------
 #create a random array with dimension og height and width
 def create_random_matrix(height, width):
     output = []
@@ -12,6 +12,7 @@ def create_random_matrix(height, width):
         output.append(new_row)
     return np.array(output)
 
+#--------------------------------------------------------------
 #vector matrix multiplication
 def vec_matr_mult(vec,matr):
     if len(vec) != len(matr):
@@ -23,3 +24,5 @@ def vec_matr_mult(vec,matr):
             for mul in range(len(vec)):
                 output[index] += vec[mul]*matr[mul][index]
         return output
+
+#--------------------------------------------------------------
