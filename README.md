@@ -1,4 +1,4 @@
-# Biologically-Computing
+# Biologically Inspired Computing
 
 
 ## Week 03
