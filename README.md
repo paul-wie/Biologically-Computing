@@ -6,3 +6,6 @@
 
 ## Week 05
 - Single Layer Perceptron
+
+## Assignment 2
+- Multilayer Perceptron
