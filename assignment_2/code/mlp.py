@@ -8,6 +8,7 @@ class mlp:
         # type(inputs) = type(targets) = <class 'numpy.ndarray'>
         #so we need numpy to modify the arrays
         
+
         print('To be implemented')
 
 
