@@ -13,23 +13,27 @@ class mlp:
         #height 13, width: 8 (nhidden =12)
         self.weight_matrix_2 = create_random_matrix(nhidden+1,len(targets[0]))
 
-        print('To be implemented')
-
-
+        self.forward(inputs[0])
 
     def earlystopping(self, inputs, targets, valid, validtargets):
-        self.train(1,2)
-        print('To be implemented')
+        print("Impement itttttt!!!")
 
     def train(self, inputs, targets, iterations=100):
-        while iterations > 0:
-            print(iterations)
-            iterations -=1
+        print("iterations", iterations)
 
         print('To be implemented')
 
-    def forward(self, inputs):
-        print('To be implemented')
+    #runs the network forward.
+    #param: input: one input vector
+    #return: hidden: activation hidden nodes, output: activation output nodes
+    def forward(self, input):
+        #add bias values
+        input = np.append(input,-1)
+        hidden_values = vec_matr_mult(input,self.weight_matrix_1)
+        activation_hidden_values = activation_hidden(hidden_values,self.beta)
+        activation_hidden_values = np.append(activation_hidden_values,-1)
+        output = vec_matr_mult(activation_hidden_values,self.weight_matrix_2)
+        return activation_hidden_values, output
 
     def confusion(self, inputs, targets):
         print('To be implemented')

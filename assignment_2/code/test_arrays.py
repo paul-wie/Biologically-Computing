@@ -30,12 +30,19 @@ def test_vector_matrix_multiplication():
     print("Res1:",res1)
     print("Res2:",res2)
 
-
+#good
+def test_activation_function():
+    a = [1,1,1]
+    b= [1,2,3]
+    a1 = activation_hidden(a,1)
+    b1 = activation_hidden(b,1)
+    print("a", a1, type(a1))
+    print("b", b1, type(b1))
 
 def main():
     #test_creat_random_array()
-    test_vector_matrix_multiplication()
-
+    #test_vector_matrix_multiplication()
+    test_activation_function()
 
 
 main()
