@@ -1,4 +1,4 @@
-from array_operations import *
+from operations import *
 
 #good
 def test_creat_random_array():

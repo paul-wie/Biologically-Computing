@@ -31,7 +31,7 @@ def vec_matr_mult(vec,matr):
 def activation_hidden(values,beta):
     for i in range(len(values)):
         values[i] = activation_function(values[i],beta)
-    return np.array(values)    
+    return np.array(values)
 
 def activation_function(x,beta):
     return 1 / (1+ math.exp(-beta*x))

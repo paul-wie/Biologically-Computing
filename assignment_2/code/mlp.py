@@ -1,5 +1,5 @@
 import numpy as np
-from array_operations import *
+from operations import *
 
 class mlp:
     def __init__(self, inputs, targets, nhidden):
@@ -13,7 +13,9 @@ class mlp:
         #height 13, width: 8 (nhidden =12)
         self.weight_matrix_2 = create_random_matrix(nhidden+1,len(targets[0]))
 
-        self.forward(inputs[0])
+        a =self.forward(inputs[0])
+        print(a[0])
+        print(a[1])
 
     def earlystopping(self, inputs, targets, valid, validtargets):
         print("Impement itttttt!!!")
@@ -21,16 +23,17 @@ class mlp:
     def train(self, inputs, targets, iterations=100):
         print("iterations", iterations)
 
-        print('To be implemented')
+
 
     #runs the network forward.
     #param: input: one input vector
     #return: hidden: activation hidden nodes, output: activation output nodes
     def forward(self, input):
-        #add bias values
+        #add bias value -1
         input = np.append(input,-1)
         hidden_values = vec_matr_mult(input,self.weight_matrix_1)
         activation_hidden_values = activation_hidden(hidden_values,self.beta)
+        #add bias value -1
         activation_hidden_values = np.append(activation_hidden_values,-1)
         output = vec_matr_mult(activation_hidden_values,self.weight_matrix_2)
         return activation_hidden_values, output
