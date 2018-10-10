@@ -36,3 +36,17 @@ def activation_hidden(values,beta):
 def activation_function(x,beta):
     return 1 / (1+ math.exp(-beta*x))
 #--------------------------------------------------------------
+#convert output vector with continious values to an output with 0 and one 1
+def convert_output(output):
+    maximum = max(output)
+    ret = [0] * len(output)
+    for i in range(len(output)):
+        if output[i] == maximum:
+            ret[i] = 1
+    return ret
+#--------------------------------------------------------------
+# calculate output error
+def output_error(actual_output, aim_output):
+    for i in range(len(actual_output)):
+        actual_output[i] = actual_output[i]- aim_output[i]
+    return actual_output

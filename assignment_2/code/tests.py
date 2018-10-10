@@ -38,11 +38,26 @@ def test_activation_function():
     b1 = activation_hidden(b,1)
     print("a", a1, type(a1))
     print("b", b1, type(b1))
+#good
+def test_convert_output():
+    a1 = [-0.234,0,3.234567,1.99,3.23456]
+    print(a1)
+    print(convert_output(a1))
+#
+def test_output_error():
+    out1 = [0,0,0,1,0,0]
+    out2 = [0,0,0,1,0,0]
+    out3 = [1,0,0,0,0,0]
+    out4 = [0,0,0,1,0,0]
+    print(output_error(out1,out2))
+    print(output_error(out4,out3))
 
 def main():
     #test_creat_random_array()
     #test_vector_matrix_multiplication()
-    test_activation_function()
+    #test_activation_function()
+    #test_convert_output()
+    test_output_error()
 
 
 main()
