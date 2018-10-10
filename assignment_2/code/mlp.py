@@ -12,7 +12,7 @@ class mlp:
         self.weight_matrix_1 = create_random_matrix(len(inputs[0])+1,nhidden)
         #height 13, width: 8 (nhidden =12)
         self.weight_matrix_2 = create_random_matrix(nhidden+1,len(targets[0]))
-        
+
 
     def earlystopping(self, inputs, targets, valid, validtargets):
         iterations = 100
@@ -22,23 +22,43 @@ class mlp:
         print(self.weight_matrix_2)
         self.train(inputs[0], targets[0], activation_hidden_values, output)
         print("-------------------------------------------")
-        print(self.weight_matrix_2)
+
 
 
     def train(self, input, target, activation_hidden_values, output):
         #calculate output error
         output_err = output_error(convert_output(output), target)
-        #update output weights
-        self.update_output_weights(self.eta, output_err, activation_hidden_values)
+        print(output_err)
         #calculate hidden error
+        hidden_err = self.hidden_error(output_err, activation_hidden_values)
+        print("hidden err",hidden_err)
+        #update output weights
+        #self.update_output_weights(self.eta, output_err, activation_hidden_values)
 
-        #update hidden weights
 
+    #update output weights
     def update_output_weights(self,eta, output_err, activation_hidden_values):
         for index_error in range(len(output_err)):
             for index_activation in range(len(activation_hidden_values)):
                 self.weight_matrix_2[index_activation][index_error] -= eta*output_err[index_error]*activation_hidden_values[index_activation]
 
+    def hidden_error(self, output_err, activation_hidden_values):
+        hidden_err = [0] * len(activation_hidden_values)
+        for index_activation in range(len(activation_hidden_values)):
+            a = activation_hidden_values[index_activation]
+
+            for index_error in range(len(output_err)):
+
+                hidden_err[index_activation] += self.weight_matrix_2[index_activation][index_error]
+
+            hidden_err[index_activation] = hidden_err[index_activation] * a * (1-a)
+        return hidden_err
+
+
+
+
+
+        return hidden_err
 
 
     #runs the network forward.
