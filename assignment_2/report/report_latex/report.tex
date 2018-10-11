@@ -119,15 +119,24 @@
 	  	\end{equation} 
 	  \end{center}
   	\subsubsection{Output Error}
-  	The forward function returns also a vector that is a converted version of the output-vector. This \textit{output\_discrete}has a 1 where the output vector has its highest value, the rest of the vector is 0. So the output-error for each node can be calculated very easy:
+  	The forward function returns also a vector that is a converted version of the output-vector. This \textit{output\_discrete} has a 1 where the output vector has its highest value, the rest of the vector is 0. So the output-error for each node can be calculated very easy:
   	 \begin{center}
   		\begin{equation}
-  		\textit{output\_error} = output\_discrete - target 
-  		\end{equation} 
+  		\delta_o(\kappa) = (y_{\kappa}-t_{\kappa}),
+  		\end{equation}
+  		$ y_{\kappa} \in \textit{output\_discrete} $, \\
+  		$ t_{\kappa} \in \textit{output}$, see (2), \\
+  		$ \textit{output\_error} = [\delta_o(1),...,\delta_o(8)] $
   	\end{center}
   	This calculation results from a linear output activation function.
   	\subsection{Calculate Hidden-Error}								%hidden error 
-	From the forward phase we have gained the output-error(11) and the activation-values(7,8) of the hidden nodes. That means it is possible to calculate the errors of the hidden nodes. The error of the hidden layer is determined by the function \textit{calculate\_hidden\_error()}:
+	From the forward phase we have gained the output-error(11) and the activation-values(7,8) of the hidden nodes. That means it is possible to calculate the errors of the hidden nodes. The error of the hidden layer is determined by the function \textit{calculate\_hidden\_error()}. It follows the formula: \\
+	 \begin{center}
+		\begin{equation}
+		\delta_h(\zeta) = a_{\zeta}(1-a_{\zeta}) \sum_{k=1}^{N} w_{\zeta}\delta(k)
+		\end{equation} 
+	\end{center}
+	Where: \\
 	
 	
 \end{document}

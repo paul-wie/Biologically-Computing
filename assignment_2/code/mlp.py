@@ -16,7 +16,7 @@ class mlp:
 
     def earlystopping(self, inputs, targets, valid, validtargets):
 
-        epochs = 30
+        epochs = 50
         failure = [0] * epochs
         for epoch in range(epochs):
             rand = self.randomize(inputs, targets)
