@@ -92,15 +92,15 @@ class mlp:
     def forward(self, input):
         #add bias
         input = np.append(input,-1)
-        hidden_values = vec_matr_mult(input, self.weight_matrix_1)
+        hidden_activation = vec_matr_mult(input, self.weight_matrix_1)
         #add bias again
-        hidden_values = np.append(hidden_values,-1)
+        hidden_activation = np.append(hidden_activation,-1)
         #apply activation function
-        hidden_values = apply_sigmoid_activation(hidden_values,self.beta)
+        hidden_activation = apply_sigmoid_activation(hidden_activation,self.beta)
         #calculate output (activation function: also singmoid
-        output = vec_matr_mult(hidden_values,self.weight_matrix_2)
+        output = vec_matr_mult(hidden_activation,self.weight_matrix_2)
         #output = apply_sigmoid_activation(output,self.beta)
-        return hidden_values,output, convert_output(output)
+        return hidden_activation,output, convert_output(output)
 
     def confusion(self, inputs, targets):
         print('To be implemented')

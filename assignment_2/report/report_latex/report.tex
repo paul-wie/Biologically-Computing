@@ -109,13 +109,13 @@
 	The result \textit{hidden\_values} is also expanded by the bias -1: 
 	\begin{center}
 		\begin{equation}
-		\textit{hidden\_values} \in \mathbb{R}^{1\times (nhidden +1)} 
+		\textit{hidden\_activation} \in \mathbb{R}^{1\times (nhidden +1)} 
 		\end{equation} 
 	\end{center}
 	 So the \textit{output} vector can be calculated easily by another vector matrix multiplication:
 	  \begin{center}
 	  	\begin{equation}
-	  	\textit{output} = hidden\_values \cdot weight\_matrix\_2 
+	  	\textit{output} = hidden\_activation \cdot weight\_matrix\_2 
 	  	\end{equation} 
 	  \end{center}
   	\subsubsection{Output Error}
@@ -133,10 +133,16 @@
 	From the forward phase we have gained the output-error(11) and the activation-values(7,8) of the hidden nodes. That means it is possible to calculate the errors of the hidden nodes. The error of the hidden layer is determined by the function \textit{calculate\_hidden\_error()}. It follows the formula: \\
 	 \begin{center}
 		\begin{equation}
-		\delta_h(\zeta) = a_{\zeta}(1-a_{\zeta}) \sum_{k=1}^{N} w_{\zeta}\delta(k)
+		\delta_h(\zeta) = a_{\zeta}(1-a_{\zeta}) \sum_{k=1}^{N} w_{\zeta}\delta_o(k)
 		\end{equation} 
 	\end{center}
-	Where: \\
+	Where:
+	\begin{itemize}
+		\item $ a_{\zeta} \in \textit{hidden\_activation} $, see (7), (8)
+		\item $ w_{\zeta} \in \textit{weight\_matrix\_2}$, see (4)
+		\item $ \delta_o(k) \ in \textit{output\_error} $, see (11)
+	\end{itemize}
+	So $w_{\zeta}$ is the weight that connects the hidden node with activation $a_{\zeta}$ and the output node with output-error $\delta_o(k)$.
 	
 	
 \end{document}
