@@ -83,6 +83,7 @@
 		\textit{input} \in \mathbb{R}^{1\times 41} 
 		\end{equation} 
 	\end{center}
+	\subsubsection{Forward Phase 1}
 	Subsequently it is possible to compute the \textit{hidden\_values}:
 	\begin{center}
 		\begin{equation}
@@ -96,6 +97,7 @@
 		\end{equation} 
 	\end{center}
 	This operation is done by the function \textit{ vec\_matr\_mult()} (that function can be found in the file \textit{operations.py}) that is doing a vector matrix multiplication with two for-loops. \\
+	\subsubsection{Activation Function}
 	After that is the activation function applied to all hidden nodes:
 	\begin{center}
 		\begin{equation}
@@ -103,6 +105,7 @@
 		\end{equation} 
 		\\ (\textit{apply\_sigmoid\_activation()} in \textit{operations.py})
 	\end{center}
+	\subsubsection{Forward Phase 2}
 	The result \textit{hidden\_values} is also expanded by the bias -1: 
 	\begin{center}
 		\begin{equation}
@@ -115,8 +118,16 @@
 	  	\textit{output} = hidden\_values \cdot weight\_matrix\_2 
 	  	\end{equation} 
 	  \end{center}
-  	The forward function returns also a vector that is a converted version of the output-vector. This has a 1 where the output vector has its highest value, the rest of the vector is 0.
+  	\subsubsection{Output Error}
+  	The forward function returns also a vector that is a converted version of the output-vector. This \textit{output\_discrete}has a 1 where the output vector has its highest value, the rest of the vector is 0. So the output-error for each node can be calculated very easy:
+  	 \begin{center}
+  		\begin{equation}
+  		\textit{output\_error} = output\_discrete - target 
+  		\end{equation} 
+  	\end{center}
+  	This calculation results from a linear output activation function.
   	\subsection{Calculate Hidden-Error}								%hidden error 
-	From the forward phase we have gained the output-error and the activation-values of the hidden nodes. That means it is possible to calculate the errors of the hidden nodes.
+	From the forward phase we have gained the output-error(11) and the activation-values(7,8) of the hidden nodes. That means it is possible to calculate the errors of the hidden nodes. The error of the hidden layer is determined by the function \textit{calculate\_hidden\_error()}:
+	
 	
 \end{document}
