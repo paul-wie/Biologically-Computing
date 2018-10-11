@@ -1,4 +1,6 @@
 from operations import *
+from random import shuffle
+import numpy as np
 
 #good
 def test_creat_random_array():
@@ -20,7 +22,9 @@ def test_vector_matrix_multiplication():
                     [1,2,3],
                     [1,2,3]
                   ])
-    print(vec_matr_mult(v1,m1))
+    res = vec_matr_mult(v1,m1)
+    print(res)
+    print(len(res))
     print("---------------------------")
     m2 = create_random_matrix(3,5)
     v2 = np.array([1,2,3])
@@ -43,7 +47,7 @@ def test_convert_output():
     a1 = [-0.234,0,3.234567,1.99,3.23456]
     print(a1)
     print(convert_output(a1))
-#
+# good
 def test_output_error():
     out1 = [0,0,0,1,0,0]
     out2 = [0,0,0,1,0,0]
@@ -52,12 +56,18 @@ def test_output_error():
     print(output_error(out1,out2))
     print(output_error(out4,out3))
 
+def test_calculate_output_error():
+    a = [1,0,0,0]
+    b = [0,0,0,1]
+    print(calculate_output_error(a,b))
+
 def main():
     #test_creat_random_array()
     #test_vector_matrix_multiplication()
     #test_activation_function()
     #test_convert_output()
-    test_output_error()
+    #test_output_error()
+    test_calculate_output_error()
 
 
 main()
