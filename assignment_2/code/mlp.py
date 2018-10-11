@@ -4,7 +4,7 @@ from random import shuffle
 class mlp:
     def __init__(self, inputs, targets, nhidden):
         self.beta = 1
-        self.eta = 0.5
+        self.eta = 0.2
         self.momentum = 0.0
         # type(inputs) = type(targets) = <class 'numpy.ndarray'>
         #so we need numpy to modify the arrays
@@ -16,7 +16,7 @@ class mlp:
 
     def earlystopping(self, inputs, targets, valid, validtargets):
 
-        epochs = 50
+        epochs = 500
         failure = [0] * epochs
         for epoch in range(epochs):
             rand = self.randomize(inputs, targets)

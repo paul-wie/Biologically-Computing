@@ -10,3 +10,5 @@
 \contentsline {subsubsection}{\numberline {2.2.3}Forward Phase 2}{5}
 \contentsline {subsubsection}{\numberline {2.2.4}Output Error}{5}
 \contentsline {subsection}{\numberline {2.3}Calculate Hidden-Error}{5}
+\contentsline {subsection}{\numberline {2.4}Train the network}{6}
+\contentsline {subsection}{\numberline {2.5}Earlystopping}{6}
