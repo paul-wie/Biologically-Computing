@@ -50,24 +50,28 @@
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		%IMPLEMENTATION
 	\section{Implementation}
 	The file \textit{mlp.py} contains the class mlp. There are 5 functions that i will explain in detail.
-	\subsection{Initialization}
+	\subsection{Initialization}								%initalization
 	The function \textit{ \_\_init\_\_(self, inputs, targets, nhidden)} has three important parameter that we need to initialize the Multilayer Perceptron. \\
 	As the input data is given as a vector, it is a good choice to create two 2D-Array for the two weight layers. As the parameters \textit{inputs} and \textit{targets} have the type \textit{$<$class 'numpy.ndarray'$>$}, it is a good idea to work only with numpy arrays. \\
-	\subsubsection{Dimension of the weight matrix}			%initalization
+	\subsubsection{Dimension of the weight matrix}			%Dimension of weight matrix
 		\begin{itemize}
 		\item weight\_matrix\_1: \\
-		The input vector in (1) has of course a size of 40 ($len(inputs[n]), n \in [len(inputs) -1] \cup \{0\}$). But we need to add the \textit{bias\_value -1} that can be seen in Figure 2. That means: \\ 
+		The input vector in (1) has of course a size of 40. But we need to add the \textit{bias\_value -1} that can be seen in Figure 2. That means: \\ 
 		\begin{center}
 			\begin{equation}
 			 \textit{weight\_matrix\_1} \in \mathbb{R}^{41 \times nhidden} 
 			\end{equation} 
+			\\
+			 $w_{i,j} \in weight\_matrix\_1, w_{i,j}$: weight between input node(i) and hidden node(j) 
 		\end{center}
 		\item weight\_matrix\_2: \\
-		There are \textit{nhidden} hidden nodes and 8 ($len(targets[n]), n \in [len(targets) -1] \cup \{0\}$) exit nodes. So we also need to take into account the \textit{bias\_value -1}. That means: \\
+		There are \textit{nhidden} hidden nodes and 8 exit nodes. So we also need to take into account the \textit{bias\_value -1}. That means: \\
 		\begin{center}
 			\begin{equation}
 			\textit{weight\_matrix\_2} \in \mathbb{R}^{(nhidden+1) \times 8} 
-			\end{equation}  
+			\end{equation}
+			\\
+			$w_{i,j} \in weight\_matrix\_1, w_{i,j}$: weight between hidden node(i) and output node(j)  
 		\end{center}
 	\end{itemize} 
 	Both, \textit{weigh\_matrix\_1} and \textit{weigh\_matrix\_2}, will be initialized randomly with values in [-1,1].
@@ -95,21 +99,24 @@
 	After that is the activation function applied to all hidden nodes:
 	\begin{center}
 		\begin{equation}
-		h_{new, i} = \frac{1}{1 + \ exp(-\beta h_i)}
+		h_{new, i} = \frac{1}{1 + \ exp(-\beta h_i)} 
 		\end{equation} 
+		\\ (\textit{apply\_sigmoid\_activation()} in \textit{operations.py})
 	\end{center}
-	The resulting \textit{activation\_hidden\_values} is also expanded by the bias -1: 
+	The result \textit{hidden\_values} is also expanded by the bias -1: 
 	\begin{center}
 		\begin{equation}
-		\textit{activation\_hidden\_values} \in \mathbb{R}^{1\times (nhidden +1)} 
+		\textit{hidden\_values} \in \mathbb{R}^{1\times (nhidden +1)} 
 		\end{equation} 
 	\end{center}
 	 So the \textit{output} vector can be calculated easily by another vector matrix multiplication:
 	  \begin{center}
 	  	\begin{equation}
-	  	\textit{output} = activation\_hidden\_values \cdot weight\_matrix\_2} 
+	  	\textit{output} = hidden\_values \cdot weight\_matrix\_2 
 	  	\end{equation} 
 	  \end{center}
-	
+  	The forward function returns also a vector that is a converted version of the output-vector. This has a 1 where the output vector has its highest value, the rest of the vector is 0.
+  	\subsection{Calculate Hidden-Error}								%hidden error 
+	From the forward phase we have gained the output-error and the activation-values of the hidden nodes. That means it is possible to calculate the errors of the hidden nodes.
 	
 \end{document}

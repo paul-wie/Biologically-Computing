@@ -50,7 +50,7 @@ test = movements[3::4,0:40]
 test_targets = target[3::4]
 
 # Try networks with different number of hidden nodes:
-hidden = 12
+hidden = 40
 
 # Initialize the network:
 net = mlp.mlp(train, train_targets, hidden)

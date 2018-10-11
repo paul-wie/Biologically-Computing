@@ -19,7 +19,9 @@ class mlp:
         epochs = 30
         failure = [0] * epochs
         for epoch in range(epochs):
-
+            rand = self.randomize(inputs, targets)
+            inputs = rand[0]
+            targets = rand[1]
             for index in range(len(inputs)):
                 target = targets[index]
                 input = inputs[index]
@@ -43,29 +45,38 @@ class mlp:
         print("inputs", len(valid))
         print("failed output:",output_fail)
 
-
+    #check if a output is equal to the target output
     def check_failure(self,output,target):
         for v1,v2 in zip(output,target):
             if v1!=v2:
                 return 1
         return 0
 
+    #randomize the input data to avoid same train order for all iterations
     def randomize(self, inputs, targets):
-        print("Impl missung")
+        ret_inputs = [[]] * len(inputs)
+        ret_targets = [[]] * len(targets)
+        new_order = [i for i in range(len(inputs))]
+        shuffle(new_order)
+        for index in range(len(inputs)):
+            ret_inputs[new_order[index]] = inputs[index]
+            ret_targets[new_order[index]] = targets[index]
+        return ret_inputs, ret_targets
 
+    #train the network, to the backpropagation
     def train(self, input, activation_hidden_values,hidden_error, output_error,):
         self.update_weights(self.eta, output_error, activation_hidden_values, self.weight_matrix_2)
         self.update_weights(self.eta, hidden_error, input, self.weight_matrix_1)
 
 
-    #update output weights
+    #update weight of the given layer depentding on an output error and a perceptron activation
     def update_weights(self,eta, error, activation, weight_matrix):
         for act_index in range(len(activation)):
             for err_index in range(len(error)):
                 weight_matrix[act_index][err_index] -= eta * activation[act_index] * error[err_index]
 
 
-    #calculate hidden error
+    #calculate the error for all hidden nodes depending on output errors and weights
     def calculate_hidden_error(self, output_err, activation_hidden_values):
         hidden_err = [0] * (len(activation_hidden_values)-1)
         for act_index in range(len(hidden_err)):

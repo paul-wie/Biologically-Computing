@@ -2,6 +2,7 @@ import numpy as np
 import sys
 import random as rand
 import math
+#some functions are implemented in operations.py to test them easily
 #--------------------------------------------------------------
 #create a random array with dimension og height and width
 def create_random_matrix(height, width):
