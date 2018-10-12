@@ -1,6 +1,8 @@
 import numpy as np
 from operations import *
 from random import shuffle
+import matplotlib.pyplot as plt
+
 class mlp:
     def __init__(self, inputs, targets, nhidden):
         self.beta = 1
@@ -26,7 +28,7 @@ class mlp:
             targets = rand[1]
             error_validation.append(0)
             error_training.append(0)
-            iterations = 4
+            iterations = 50
             #-----------------------------------------------------------------------------------
             #training, one iteration through the input data set
             for i in range(iterations):
@@ -37,25 +39,40 @@ class mlp:
                     hidden_activation = forward_results[0]
                     output_clear = forward_results[1]
                     output_discrete = forward_results[2]
-                    output_error = calculate_output_error(output_discrete,target)
+                    output_error = error_output_continious(output_clear,target)
                     hidden_error = self.calculate_hidden_error(output_error,hidden_activation)
                     self.train(input,hidden_activation,hidden_error,output_error)
                     if i == iterations-1:
-                        error_training[epochs] += diff_squ_sum_vec_vec(output_discrete,target)
+                        error_training[epochs] += diff_squ_sum_vec_vec(output_clear,target)
 
             #-----------------------------------------------------------------------------------
             #validation, test early stopping
+            errors = 0
             for v,t in zip(valid,validtargets):
                 res = self.forward(v)
-                discrete_output = res[2]
-                error_validation[epochs] += diff_squ_sum_vec_vec(discrete_output,t)
-                if epochs >1 and abs(error_validation[epochs]-error_training[epochs]) < 4:
-                    early_stopping = True
+                error_validation[epochs] += diff_squ_sum_vec_vec(res[1],t)
+                errors +=   diff_squ_sum_vec_vec(res[2],t)
+            if epochs >1 and error_validation[epochs] > error_validation[epochs-1]:
+                early_stopping = True
             epochs +=1
 
-            print(error_training)
-            print(error_validation)
-            print(epochs*iterations)
+        #print to the console
+        print("Training Errors (last iteration of a epoch)  :", error_training)
+        print("Validation Errors                            :", error_validation)
+        print("Number of Epochs                             :", epochs)
+        print("Number iterations per epoch                  :",iterations)
+        print("Validation errors in the last epoch:         :", errors)
+        print("Percent of Validation Errors                 :",  str((errors/len(valid))*100) + " %")
+
+        #plot result and save it as a pdf file
+        x = [ (i+1) for i in range(epochs)]
+        plt.plot(x,error_training, 'r', label='Training set (last iteration of a epoch)')
+        plt.plot(x,error_validation, 'b',label='Validation set')
+        plt.legend(loc='upper right')
+        plt.ylabel("Classification Error")
+        plt.xlabel("Number of epochs ( " + str(iterations) + " iterations in each epoch)")
+        plt.savefig("multi_layer_perceptron.png", format="png")
+        plt.show()
 
 
     #check if a output is equal to the target output
@@ -113,7 +130,7 @@ class mlp:
         #calculate output (activation function: also singmoid
         output = vec_matr_mult(hidden_activation,self.weight_matrix_2)
         #output = apply_sigmoid_activation(output,self.beta)
-        return hidden_activation,output, convert_output(output)
+        return hidden_activation, apply_sigmoid_activation(output,1), convert_output(output)
 
     def confusion(self, inputs, targets):
         print('To be implemented')
