@@ -24,29 +24,38 @@ class mlp:
             rand = self.randomize(inputs, targets)
             inputs = rand[0]
             targets = rand[1]
-            failure_training.append(0)
             error_validation.append(0)
-            epochs +=1
+            error_training.append(0)
+            iterations = 4
             #-----------------------------------------------------------------------------------
             #training, one iteration through the input data set
-            for index in range(len(inputs)):
-                target = targets[index]
-                input = inputs[index]
+            for i in range(iterations):
+                for index in range(len(inputs)):
+                    target = targets[index]
+                    input = inputs[index]
+                    forward_results = self.forward(input)
+                    hidden_activation = forward_results[0]
+                    output_clear = forward_results[1]
+                    output_discrete = forward_results[2]
+                    output_error = calculate_output_error(output_discrete,target)
+                    hidden_error = self.calculate_hidden_error(output_error,hidden_activation)
+                    self.train(input,hidden_activation,hidden_error,output_error)
+                    if i == iterations-1:
+                        error_training[epochs] += diff_squ_sum_vec_vec(output_discrete,target)
 
-                forward_results = self.forward(input)
-                hidden_activation = forward_results[0]
-                output_clear = forward_results[1]
-                output_discrete = forward_results[2]
-                output_error = calculate_output_error(output_discrete,target)
-                hidden_error = self.calculate_hidden_error(output_error,hidden_activation)
-                self.train(input,hidden_activation,hidden_error,output_error)
-                failure_training[epoch] += diff_squ_sum_vec_vec(output_discrete,target)
             #-----------------------------------------------------------------------------------
+            #validation, test early stopping
+            for v,t in zip(valid,validtargets):
+                res = self.forward(v)
+                discrete_output = res[2]
+                error_validation[epochs] += diff_squ_sum_vec_vec(discrete_output,t)
+                if epochs >1 and abs(error_validation[epochs]-error_training[epochs]) < 4:
+                    early_stopping = True
+            epochs +=1
 
-        for v,t in zip(valid,validtargets):
-            res = self.forward(v)
-            discrete_output = res[2]
-            output_fail += self.check_failure(discrete_output,t)
+            print(error_training)
+            print(error_validation)
+            print(epochs*iterations)
 
 
     #check if a output is equal to the target output

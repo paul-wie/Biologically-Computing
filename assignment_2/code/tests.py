@@ -71,7 +71,7 @@ def test_difference_vec_vec():
 
     #print(res1)
     print(res2)
-#bassd    
+#bassd
 def test_diff_squ_sum_vec_vec():
         v1 = [0,1,0]
         v2 = [1,0,0]
@@ -91,6 +91,11 @@ def main():
     #test_output_error()
     #test_calculate_output_error()
     #test_difference_vec_vec()
-    test_diff_squ_sum_vec_vec()
+    #test_diff_squ_sum_vec_vec()
+    a = [1,2]
+    b = [3,4]
+    for v in b:
+        a.append(v)
+    print(a)
 
 main()
