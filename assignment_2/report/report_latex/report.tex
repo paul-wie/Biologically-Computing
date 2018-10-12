@@ -161,7 +161,10 @@
 	\subsection{Earlystopping}				%%%%%%%%%%%%%%%%%earlystopping
 	The function \textit{earlystopping()} observes the learning of the network. It should avoid overfitting. That means that the network is adjusted too much to the training data so unknown data will be classified very bad.
 	\begin{center}
-		\includegraphics[width=0.9\linewidth]{"pictures/Untitled Diagram"}
+		\includegraphics[width=0.9\linewidth]{"pictures/Untitled Diagram"} \\
+		Figure 1: Main flow of the Multilayer-Perceptron 
 	\end{center}
+	As you can see in the figure above, \textit{Sequential Training} is used. That means the network will be trained after one input vector. One iteration is therefor one iteration through the whole data input. That is also the reason why the input data will be randomized each iteration. The randomization should avoid learning the network with data in the same order. That may lead bad generalization issues.
+	\subsubsection{Decision earlystopping}		%%%%%%%%%%%%%%%%%decision earlystopping
 	  
 \end{document}
