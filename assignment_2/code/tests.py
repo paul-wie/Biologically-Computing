@@ -55,11 +55,33 @@ def test_output_error():
     out4 = [0,0,0,1,0,0]
     print(output_error(out1,out2))
     print(output_error(out4,out3))
-
+#good
 def test_calculate_output_error():
     a = [1,0,0,0]
     b = [0,0,0,1]
     print(calculate_output_error(a,b))
+#good
+def test_difference_vec_vec():
+    v1 = [0,1,0]
+    v2 = [1,0,0]
+    v3 = [0,1,0]
+
+    #res1 = difference_vec_vec(v1,v2)
+    res2 =difference_vec_vec(v1,v3)
+
+    #print(res1)
+    print(res2)
+#bassd    
+def test_diff_squ_sum_vec_vec():
+        v1 = [0,1,0]
+        v2 = [1,0,0]
+        v3 = [0,1,0]
+
+        res1 = diff_squ_sum_vec_vec(v1,v2)
+        #res2 = diff_squ_sum_vec_vec(v1,v3)
+
+        print(res1)
+        #print(res2)
 
 def main():
     #test_creat_random_array()
@@ -67,7 +89,8 @@ def main():
     #test_activation_function()
     #test_convert_output()
     #test_output_error()
-    test_calculate_output_error()
-
+    #test_calculate_output_error()
+    #test_difference_vec_vec()
+    test_diff_squ_sum_vec_vec()
 
 main()

@@ -15,13 +15,20 @@ class mlp:
 
 
     def earlystopping(self, inputs, targets, valid, validtargets):
+        early_stopping = False
+        error_training = []
+        error_validation = []
+        epochs = 0
 
-        epochs = 500
-        failure = [0] * epochs
-        for epoch in range(epochs):
+        while early_stopping == False:
             rand = self.randomize(inputs, targets)
             inputs = rand[0]
             targets = rand[1]
+            failure_training.append(0)
+            error_validation.append(0)
+            epochs +=1
+            #-----------------------------------------------------------------------------------
+            #training, one iteration through the input data set
             for index in range(len(inputs)):
                 target = targets[index]
                 input = inputs[index]
@@ -33,17 +40,14 @@ class mlp:
                 output_error = calculate_output_error(output_discrete,target)
                 hidden_error = self.calculate_hidden_error(output_error,hidden_activation)
                 self.train(input,hidden_activation,hidden_error,output_error)
-                failure[epoch] += self.check_failure(output_discrete,target)
-        print(failure)
+                failure_training[epoch] += diff_squ_sum_vec_vec(output_discrete,target)
+            #-----------------------------------------------------------------------------------
 
-        output_fail = 0
         for v,t in zip(valid,validtargets):
             res = self.forward(v)
             discrete_output = res[2]
             output_fail += self.check_failure(discrete_output,t)
 
-        print("inputs", len(valid))
-        print("failed output:",output_fail)
 
     #check if a output is equal to the target output
     def check_failure(self,output,target):

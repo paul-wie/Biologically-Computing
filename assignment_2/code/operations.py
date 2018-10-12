@@ -49,3 +49,20 @@ def calculate_output_error(actual_output, aim_output):
     for i in range(len(y)):
         y[i] = y[i]- t[i]
     return np.array(y)
+#--------------------------------------------------------------
+# calculate difference of two vectors
+def difference_vec_vec(vec1, vec2):
+    for index in range(len(vec1)):
+        vec1[index] -= vec2[index]
+    return vec1
+#--------------------------------------------------------------
+# calculate square sum of a vector
+def square_sum_vec(vec):
+    sum = 0
+    for x in vec:
+        sum += x**2
+    return sum
+#--------------------------------------------------------------
+# difference and square sum of to vectors
+def diff_squ_sum_vec_vec(v1,v2):
+    return square_sum_vec(difference_vec_vec(v1,v2))
