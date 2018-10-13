@@ -192,5 +192,12 @@
 	 	\end{equation} 
 	 \end{center}
  	is used to estimate the quality of the network. So after each epoch (one is a certain number of iterations, eg. 10,100,1000) the Error-Function will be applied to the validation set. If the error of one epoch if bigger than the epoch before, the algorithm stops to avoid overfitting.
+ 	\begin{center}
+ 		\includegraphics[width=0.8\linewidth]{pictures/earlystopping}
+ 		\\Figure 2: Effect of Earlystopping
+ 	\end{center}
+ 	In the graphic above you see very good how earlystopping works. Both, the Training-Error and the Validation-Error decrease. The Training-Error would reach zero if there is no stopping criteria. That means also that the Validation-Error would increase again because the network is not able to classify unknown data as good as when the algorithm stops earlier. So the Algorithm stops if the blue line increases. 
+ 	\subsection{Confusion}					%%%%%%%%%%%%%%%%%confusion
+ 	
 	 
 \end{document}

@@ -13,3 +13,4 @@
 \contentsline {subsection}{\numberline {2.4}Train the network}{6}
 \contentsline {subsection}{\numberline {2.5}Earlystopping}{6}
 \contentsline {subsubsection}{\numberline {2.5.1}Decision earlystopping}{7}
+\contentsline {subsection}{\numberline {2.6}Confusion}{7}
