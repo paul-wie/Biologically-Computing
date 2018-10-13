@@ -68,7 +68,7 @@ def square_sum_vec(vec):
     sum = 0
     for x in vec:
         sum += x**2
-    return sum
+    return 0.5*sum
 #--------------------------------------------------------------
 # difference and square sum of to vectors
 def diff_squ_sum_vec_vec(v1,v2):
