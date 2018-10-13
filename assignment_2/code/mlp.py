@@ -28,7 +28,7 @@ class mlp:
             targets = rand[1]
             error_validation.append(0)
             error_training.append(0)
-            iterations = 10
+            iterations = 5
             #-----------------------------------------------------------------------------------
             #training, one iteration through the input data set
             for i in range(iterations):
@@ -36,9 +36,6 @@ class mlp:
                     target = targets[index]
                     input = inputs[index]
                     forward_results = self.forward(input)
-                    print("clear output",forward_results[1])
-                    print("target", target)
-                    print("--------------------")
                     hidden_activation = forward_results[0]
                     output_clear = forward_results[1]
                     output_discrete = forward_results[2]
@@ -49,25 +46,25 @@ class mlp:
                         error_training[epochs] += diff_squ_sum_vec_vec(output_clear,target)
 
             #-----------------------------------------------------------------------------------
+
             #validation, test early stopping
             errors = 0
             for v,t in zip(valid,validtargets):
                 res = self.forward(v)
-                print("clear output",res[1])
-                print("target", t)
-                print("-------------------- validation")
                 error_validation[epochs] += diff_squ_sum_vec_vec(res[1],t)
                 errors +=   diff_squ_sum_vec_vec(res[2],t)
             if epochs >1 and error_validation[epochs] > error_validation[epochs-1]:
                 early_stopping = True
             epochs +=1
-
+        print("----------------------------------------------------------------------------")
+        print("Training Phase")
+        print("")
         #print to the console
-        print("Training Errors (last iteration of a epoch)  :", error_training)
-        print("Validation Errors                            :", error_validation)
+        print("Training Error  (last iteration of a epoch)  :", error_training)
+        print("Validation Error                             :", error_validation)
         print("Number of Epochs                             :", epochs)
         print("Number iterations per epoch                  :",iterations)
-        print("Validation errors in the last epoch:         :", errors)
+        print("Wrong claffifications in validation set:     :", errors)
         print("Percent of Validation Errors                 :",  str((errors/len(valid))*100) + " %")
 
         #plot result and save it as a pdf file
@@ -79,6 +76,7 @@ class mlp:
         plt.xlabel("Number of epochs ( " + str(iterations) + " iterations in each epoch)")
         plt.savefig("multi_layer_perceptron.png", format="png")
         plt.show()
+        print("----------------------------------------------------------------------------")
 
 
     #check if a output is equal to the target output

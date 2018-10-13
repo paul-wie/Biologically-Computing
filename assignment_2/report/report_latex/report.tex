@@ -191,6 +191,6 @@
 	 	E(w) = \frac{1}{2} \sum_{k} (t_{\kappa} - y_{\kappa})^{2}
 	 	\end{equation} 
 	 \end{center}
- 	is used to estimate the quality of the network.
+ 	is used to estimate the quality of the network. So after each epoch (one is a certain number of iterations, eg. 10,100,1000) the Error-Function will be applied to the validation set. If the error of one epoch if bigger than the epoch before, the algorithm stops to avoid overfitting.
 	 
 \end{document}
