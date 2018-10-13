@@ -101,7 +101,7 @@
 	After that is the activation function applied to all hidden nodes:
 	\begin{center}
 		\begin{equation}
-		h_{new, i} = \frac{1}{1 + \ exp(-\beta h_i)} 
+		a_{\zeta} = h_{new, i} = \frac{1}{1 + \ exp(-\beta h_i)} 
 		\end{equation} 
 		\\ (\textit{apply\_sigmoid\_activation()} in \textit{operations.py})
 	\end{center}
@@ -119,26 +119,45 @@
 	  	\end{equation} 
 	  \end{center}
   	\subsubsection{Output Error}
-  	The forward function returns also a vector that is a converted version of the output-vector. This \textit{output\_discrete} has a 1 where the output vector has its highest value, the rest of the vector is 0. So the output-error for each node can be calculated very easy:
-  	 \begin{center}
+  	For the first implementation a linear output function was used. But the behavior of the algorithm was not really good. So I decided to apply the sigmoid function (8) to the output as well. The error function for the output node is therefor: \\
+  	\begin{center}
   		\begin{equation}
-  		\delta_o(\kappa) = (y_{\kappa}-t_{\kappa}),
-  		\end{equation}
-  		$ y_{\kappa} \in \textit{output\_discrete} $, \\
-  		$ t_{\kappa} \in \textit{output}$, see (2), \\
-  		$ \textit{output\_error} = [\delta_o(1),...,\delta_o(8)] $
+  		\delta_o (\kappa) = (y_{\kappa}-t_{\kappa})y_{\kappa}(1-y_{\kappa})  
+  		\end{equation} 
   	\end{center}
-  	This calculation results from a linear output activation function.
+  	This works much better. For example, we can see that the target value converges to 1 and the other to 0. Here is an example of the training set: \\
+  	\begin{center}
+  			\begin{center}
+  			\begin{tabular}{|l|c|c|c|c|c|c|c|c|}
+  				\hline
+  				output&	1.6e-02& 7.0e-02 & 1.6e-02 & 2.9e-02 & 4.7e-04 & 1.1e-05 & 6.6e-05& 8.4e-01\\ 
+  				\hline
+  				target&0&0  &0  &0  &0  &0  &0  &1 \\
+  				\hline
+  			\end{tabular}		
+  		\end{center}
+  	\end{center}
+  	And another output of the validation set: \\
+  	\begin{center}
+  			\begin{tabular}{|l|c|c|c|c|c|c|c|c|}
+  				\hline
+  				output&1.6e-02& 1.0e-04 & 9.8e-01 & 9.4e-03 & 6.4e-05 & 2.6e-04 & 1.6e-02 & 2.0e-02\\ 
+  				\hline
+  				target&0&0  &1  &0  &0  &0  &0  &0 \\
+  				\hline
+  			\end{tabular}		
+  	\end{center}
+  	
   	\subsection{Calculate Hidden-Error}								%hidden error 
 	From the forward phase we have gained the \textit{output-error}(11) and the \textit{activation-values}(7),(8) of the hidden nodes. That means it is possible to calculate the errors of the hidden nodes. The error of the hidden layer is determined by the function \textit{calculate\_hidden\_error()}. It follows the formula: \\
 	 \begin{center}
 		\begin{equation}
-		\delta_h(\zeta) = a_{\zeta}(1-a_{\zeta}) \sum_{k=1}^{N} w_{\zeta}\delta_o(k)
+		\delta_h(\zeta) = a_{\zeta}(1-a_{\zeta}) \sum_{k=1}^{N} w_{\zeta}\delta_o(k) \quad, \beta =1
 		\end{equation} 
 	\end{center}
 	Where:
 	\begin{itemize}
-		\item $ a_{\zeta} \in \textit{hidden\_activation} $, see (7), (8)
+		\item $ a_{\zeta} \in \textit{hidden\_activation} $, because $ \beta a_{\zeta}(1-a_{\zeta}) = \frac{d}{dh} \frac{1}{1 + \ exp(-\beta h_i)}$, see (8)
 		\item $ w_{\zeta} \in \textit{weight\_matrix\_2}$, see (4)
 		\item $ \delta_o(k) \ in \textit{output\_error} $, see (11)
 	\end{itemize}
@@ -164,7 +183,14 @@
 		\includegraphics[width=0.9\linewidth]{"pictures/Untitled Diagram"} \\
 		Figure 1: Main flow of the Multilayer-Perceptron 
 	\end{center}
-	As you can see in the figure above, \textit{Sequential Training} is used. That means the network will be trained after one input vector. One iteration is therefor one iteration through the whole data input. That is also the reason why the input data will be randomized each iteration. The randomization should avoid learning the network with data in the same order. That may lead bad generalization issues.
+	As you can see in the figure above, \textit{Sequential Training} is used. That means the network will be trained after one input vector. One iteration is therefor one iteration through the whole data input. That is also the reason why the input data will be randomized each iteration. The randomization should avoid learning the network with data in the same order. That may lead to bad generalization issues.
 	\subsubsection{Decision earlystopping}		%%%%%%%%%%%%%%%%%decision earlystopping
-	  
+	 As you can see in the graphic above, the algorithm trains the network for a certain number of iterations before the validation set will be applied.The validation set is unknown to the network. The Error-Function: \\
+	 	\begin{center}
+	 	\begin{equation}
+	 	E(w) = \frac{1}{2} \sum_{k} (t_{\kappa} - y_{\kappa})^{2}
+	 	\end{equation} 
+	 \end{center}
+ 	is used to estimate the quality of the network. So after each epoch (one is a certain number of iterations, eg. 10,100,1000) the Error-Function will be applied to the validation set. If the error of one epoch if bigger than the epoch before, the algorithm stops to avoid overfitting.
+	 
 \end{document}

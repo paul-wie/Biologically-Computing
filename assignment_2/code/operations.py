@@ -50,6 +50,13 @@ def calculate_output_error(actual_output, aim_output):
         y[i] = y[i]- t[i]
     return np.array(y)
 #--------------------------------------------------------------
+# calculate output error
+def error_output_continious(outp,t):
+    ret = [0] * len(outp)
+    for i in range(len(outp)):
+        ret[i] = (outp[i]-t[i]) * outp[i] * (1-outp[i])
+    return ret
+#--------------------------------------------------------------
 # calculate difference of two vectors
 def difference_vec_vec(vec1, vec2):
     for index in range(len(vec1)):
@@ -61,7 +68,7 @@ def square_sum_vec(vec):
     sum = 0
     for x in vec:
         sum += x**2
-    return sum
+    return 0.5*sum
 #--------------------------------------------------------------
 # difference and square sum of to vectors
 def diff_squ_sum_vec_vec(v1,v2):
