@@ -75,7 +75,7 @@ class mlp:
         plt.ylabel("Classification Error")
         plt.xlabel("Number of epochs ( " + str(iterations) + " iterations in each epoch)")
         plt.savefig("multi_layer_perceptron.png", format="png")
-        plt.show()
+        #plt.show()
         print("----------------------------------------------------------------------------")
 
 
@@ -117,7 +117,7 @@ class mlp:
             a = activation_hidden_values[act_index]
             for err_index in range(len(output_err)):
                 hidden_err[act_index] += output_err[err_index]*self.weight_matrix_2[act_index][err_index]
-            hidden_err[act_index] = hidden_err[act_index] * a * (1-a)
+            hidden_err[act_index] = hidden_err[act_index] * a * (1-a) * self.beta
         return np.array(hidden_err)
 
     #runs the network forward.
@@ -137,4 +137,30 @@ class mlp:
         return hidden_activation, apply_sigmoid_activation(output,1), convert_output(output)
 
     def confusion(self, inputs, targets):
-        print('To be implemented')
+        wrong_classifications = 0
+        confusion_matrix = build_confusion_matrix(len(targets[0]))
+
+        for inp,tar in zip(inputs,targets):
+            res = self.forward(inp)
+            wrong_classifications +=   diff_squ_sum_vec_vec(np.copy(res[2]),tar)
+            output_index = index_confusion_matrix(np.copy(res[2]))
+            target_index = index_confusion_matrix(tar)
+            confusion_matrix[target_index][output_index] +=1
+
+
+
+        print("Confusion Phase")
+        print("")
+        print("Number of inputs                 :", len(inputs))
+        print("Wrong Classifications            :", wrong_classifications)
+        print("Percentage wrong classifications :", str(wrong_classifications/len(inputs)*100) +" %")
+        print("-----------------------")
+        print("Confusion Matrix")
+        print("")
+        for row in confusion_matrix:
+            print(row)
+
+        print("")
+        print("x: Correct classes")
+        print("y: Classified classes")
+        print("Percentage of correct classes:")

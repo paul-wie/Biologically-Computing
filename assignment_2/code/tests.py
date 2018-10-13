@@ -1,7 +1,7 @@
 from operations import *
 from random import shuffle
 import numpy as np
-
+#-----------------------------------------------------------
 #good
 def test_creat_random_array():
     a1 = create_random_matrix(4,3)
@@ -15,6 +15,7 @@ def test_creat_random_array():
     print("height:", len(a2))
     print("width:",len(a2[0]))
     print(type(a2))
+#-----------------------------------------------------------
 #good
 def test_vector_matrix_multiplication():
     v1 = np.array([1,2,3])
@@ -33,7 +34,7 @@ def test_vector_matrix_multiplication():
     print(m2)
     print("Res1:",res1)
     print("Res2:",res2)
-
+#-----------------------------------------------------------
 #good
 def test_activation_function():
     a = [1,1,1]
@@ -42,11 +43,13 @@ def test_activation_function():
     b1 = activation_hidden(b,1)
     print("a", a1, type(a1))
     print("b", b1, type(b1))
+#-----------------------------------------------------------
 #good
 def test_convert_output():
     a1 = [-0.234,0,3.234567,1.99,3.23456]
     print(a1)
     print(convert_output(a1))
+#-----------------------------------------------------------
 # good
 def test_output_error():
     out1 = [0,0,0,1,0,0]
@@ -55,11 +58,13 @@ def test_output_error():
     out4 = [0,0,0,1,0,0]
     print(output_error(out1,out2))
     print(output_error(out4,out3))
+#-----------------------------------------------------------
 #good
 def test_calculate_output_error():
     a = [1,0,0,0]
     b = [0,0,0,1]
     print(calculate_output_error(a,b))
+#-----------------------------------------------------------
 #good
 def test_difference_vec_vec():
     v1 = [0,1,0]
@@ -71,6 +76,7 @@ def test_difference_vec_vec():
 
     #print(res1)
     print(res2)
+#-----------------------------------------------------------
 #bassd
 def test_diff_squ_sum_vec_vec():
         v1 = [0,1,0]
@@ -82,6 +88,22 @@ def test_diff_squ_sum_vec_vec():
 
         print(res1)
         #print(res2)
+#-----------------------------------------------------------
+#good
+def test_build_confusion_matrix():
+    c1 = build_confusion_matrix(8)
+    print("Height   :",len(c1))
+    print("Width    :",len(c1[0]))
+    for row in c1:
+        print(row)
+#-----------------------------------------------------------
+#good
+def test_index_confusion_matrix():
+    vec1 = [0,0,0,1,0,0,0]
+    vec2 = [0,0,0,0,0,0,1]
+
+    print(index_confusion_matrix(vec1),3)
+    print(index_confusion_matrix(vec2),6)
 
 def main():
     #test_creat_random_array()
@@ -92,10 +114,7 @@ def main():
     #test_calculate_output_error()
     #test_difference_vec_vec()
     #test_diff_squ_sum_vec_vec()
-    a = [1,2]
-    b = [3,4]
-    for v in b:
-        a.append(v)
-    print(a)
+    #test_build_confusion_matrix()
+    test_index_confusion_matrix()
 
 main()

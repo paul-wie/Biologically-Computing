@@ -73,3 +73,18 @@ def square_sum_vec(vec):
 # difference and square sum of to vectors
 def diff_squ_sum_vec_vec(v1,v2):
     return square_sum_vec(difference_vec_vec(v1,v2))
+#--------------------------------------------------------------
+# build raw confusion matrix
+def build_confusion_matrix(c):
+    row = [0]*c
+    ret = []
+    for i in range(c):
+        ret.append(row.copy())
+    return ret
+#--------------------------------------------------------------
+# get index where vector is 1
+def index_confusion_matrix(vec):
+    for i in range(len(vec)):
+        if vec[i] ==1:
+            return i
+    return 0
