@@ -88,3 +88,15 @@ def index_confusion_matrix(vec):
         if vec[i] ==1:
             return i
     return 0
+#--------------------------------------------------------------
+# percetage of correct classes
+def percetage_correct_classes(confusion_matrix):
+    correct_classes = len(confusion_matrix)
+    for cl in range(len(confusion_matrix)):
+        sum = 0
+        for index in range(len(confusion_matrix)):
+            if index != cl:
+                sum+= confusion_matrix[cl][index]
+        if sum !=0:
+            correct_classes-=1
+    return (correct_classes/len(confusion_matrix)*100) if correct_classes >0 else 0

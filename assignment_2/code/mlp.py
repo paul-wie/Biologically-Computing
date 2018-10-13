@@ -28,7 +28,7 @@ class mlp:
             targets = rand[1]
             error_validation.append(0)
             error_training.append(0)
-            iterations = 5
+            iterations = 100
             #-----------------------------------------------------------------------------------
             #training, one iteration through the input data set
             for i in range(iterations):
@@ -163,4 +163,4 @@ class mlp:
         print("")
         print("x: Correct classes")
         print("y: Classified classes")
-        print("Percentage of correct classes:")
+        print("Percentage of correct classes:", str(percetage_correct_classes(confusion_matrix)) + " %")
