@@ -13,4 +13,9 @@
 \contentsline {subsection}{\numberline {2.4}Train the network}{6}
 \contentsline {subsection}{\numberline {2.5}Earlystopping}{6}
 \contentsline {subsubsection}{\numberline {2.5.1}Decision earlystopping}{7}
-\contentsline {subsection}{\numberline {2.6}Confusion}{7}
+\contentsline {subsection}{\numberline {2.6}Confusion}{8}
+\contentsline {section}{\numberline {3}Results}{8}
+\contentsline {subsection}{\numberline {3.1}Hidden Nodes: 6}{8}
+\contentsline {subsection}{\numberline {3.2}Hidden Nodes: 12}{8}
+\contentsline {subsection}{\numberline {3.3}Hidden Nodes: 18}{9}
+\contentsline {subsection}{\numberline {3.4}Conclusion}{9}

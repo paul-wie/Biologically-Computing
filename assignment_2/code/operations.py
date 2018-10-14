@@ -96,7 +96,7 @@ def percetage_correct_classes(confusion_matrix):
         sum = 0
         for index in range(len(confusion_matrix)):
             if index != cl:
-                sum+= confusion_matrix[cl][index]
+                sum+= confusion_matrix[index][cl]
         if sum !=0:
             correct_classes-=1
     return (correct_classes/len(confusion_matrix)*100) if correct_classes >0 else 0

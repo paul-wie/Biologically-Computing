@@ -198,6 +198,81 @@
  	\end{center}
  	In the graphic above you see very good how earlystopping works. Both, the Training-Error and the Validation-Error decrease. The Training-Error would reach zero if there is no stopping criteria. That means also that the Validation-Error would increase again because the network is not able to classify unknown data as good as when the algorithm stops earlier. So the Algorithm stops if the blue line starts to increase. 
  	\subsection{Confusion}					%%%%%%%%%%%%%%%%%confusion
+ 	For the confusion phase, a set of unknown data will be forwarded. The number of wrong classifications is represented as a confusion-matrix. Where on the x-axis are the target classes on on the y-axis the classifications that are made by the network.
  	
+ 	\section{Results}						%%%%%%%%%%%%%%%%RESULTS
+ 	The network will be tuned and forwarded to evaluate and compare the results. All tests are made with 10 iterations in each epoch. For each number of nodes were made 10 tests because the random initialization of the weight matrices can influence the quality of the result.
+ 	\subsection{Hidden Nodes: 6}
+ 	\begin{center}
+ 		$ confusion\_matrix = \begin{bmatrix}
+ 		12& 0& 0& 0& 1& 0& 0& 0  \\
+ 		0& 15& 0& 0& 0& 0& 0& 0 \\
+ 		0& 0& 13& 0& 0& 1& 0& 0 \\
+ 		0& 0& 0& 17& 0& 0& 0& 0 \\
+ 		2& 0& 0& 0& 11& 0& 0& 0 \\
+ 		1& 1& 0& 0& 0& 12& 0& 0 \\
+ 		0& 0& 0& 0& 0& 1& 10& 0 \\
+ 		0& 0& 0& 2& 0& 0& 0& 12 \\
+ 		\end{bmatrix}$
+ 	\end{center}
+ 	
+ 	\begin{tabular} {ll}
+ 		Percentage of correct classes: &  37.5 \% \\
+ 		Number of inputs: & 111 \\
+ 		Wrong classifications: & 9 \\
+ 		Percentage wrong classification: & 8.1 \% \\
+ 	\end{tabular}
+ 	\\ 
+ 	\\ \\
+ 	For more results see the file \textit{mlp\_6\_hidden\_nodes.txt}
+ 	
+ 	\subsection{Hidden Nodes: 12}
+ 		\begin{center}
+ 		$ confusion\_matrix = \begin{bmatrix}
+ 		11& 0& 0& 0& 1& 0& 0& 1 \\
+ 		0& 17& 0& 0& 0& 0& 0& 0 \\
+ 		0& 0& 14& 0& 0& 0& 0& 0 \\
+ 		0& 1& 0& 9& 0& 0& 0& 1 \\
+ 		0& 0& 0& 0& 16& 0& 0& 0 \\
+ 		0& 0& 0& 0& 0& 14& 0& 0 \\
+ 		0& 0& 0& 0& 0& 0& 13& 0 \\
+ 		0& 0& 0& 0& 0& 0& 0& 13 \\
+ 		\end{bmatrix}$
+ 	\end{center}
+	 \begin{tabular} {ll}
+	 	Percentage of correct classes: &  62.5 \% \\
+	 	Number of inputs: & 111 \\
+	 	Wrong classifications: & 4 \\
+	 	Percentage wrong classification: & 3.6 \% \\
+	 \end{tabular}
+ 	\\ 
+ 	\\ \\
+ 	For more results see the file \textit{mlp\_12\_hidden\_nodes.txt}
+ 	\subsection{Hidden Nodes: 18}
+ 		\begin{center}
+ 		$ confusion\_matrix = \begin{bmatrix}
+ 		13& 0& 0& 0& 2& 0& 0& 0 \\
+ 		0& 9& 0& 0& 0& 0& 0& 0 \\
+ 		0& 0& 16& 0& 0& 0& 0& 0 \\
+ 		0& 0& 0& 12& 0& 0& 1& 1 \\
+ 		0& 0& 0& 1& 12& 0& 0& 0 \\
+ 		0& 0& 0& 0& 0& 13& 0& 0 \\
+ 		0& 0& 0& 0& 0& 1& 13& 0 \\
+ 		1& 0& 0& 0& 0& 0& 0& 16 \\
+ 		\end{bmatrix}$
+ 	\end{center}
+ 	\begin{tabular} {ll}
+ 		Percentage of correct classes: &  25.0 \% \\
+ 		Number of inputs: & 111 \\
+ 		Wrong classifications: & 7 \\
+ 		Percentage wrong classification: & 6.3 \% \\
+ 	\end{tabular}
+ 	\\ 
+ 	\\ \\
+ 	For more results see the file \textit{mlp\_18\_hidden\_nodes.txt}			  
 	 
+	\subsection{Conclusion}						%%%%%%%%%CONCLUSION
+	As you can in the files the results differ sometimes more, sometimes less. The reason for this behavior is that the weight are initialized randomly. So the network will be trained non-deterministic. \\
+	So when we take a look on a common result like in 3.1, 3.2 and 3.3 we can see, that a network with 6 and 18 hidden node gives us very similar results. The number of wrong classified vectors is very similar. But there is also a difference. When I run a network with 18 nodes, it is common to get confusion-matrices with 25 \% correct classes. For 6 hidden nodes it is more like 37.5 \%. That means when we use 18 hidden nodes, the result is not really better, but the failures are more spread to all classes. \\
+	The best result, I think, is produces a network with 12 hidden layers. The confusion matrices are having the highest percentage of correct classifications. The total wrong classifications is in many results also very low.   
 \end{document}

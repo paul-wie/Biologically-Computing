@@ -1,0 +1,150 @@
+----------------------------------------
+Number of Inputs:111
+Wrong Classifications   :9.0
+Percentage wrong classifications:8.108108108108109%
+-----
+Confusion Matrix
+[15, 0, 0, 0, 0, 0, 0, 0]
+[0, 20, 0, 0, 0, 0, 0, 0]
+[0, 0, 8, 0, 0, 0, 0, 0]
+[0, 0, 0, 8, 2, 0, 0, 1]
+[1, 0, 0, 0, 16, 0, 0, 0]
+[0, 0, 0, 0, 0, 7, 0, 0]
+[0, 0, 0, 1, 0, 1, 18, 0]
+[0, 0, 1, 2, 0, 0, 0, 10]
+Percentage of correct classes:25.0 %
+----------------------------------------
+Number of Inputs:111
+Wrong Classifications   :8.0
+Percentage wrong classifications:7.207207207207207%
+-----
+Confusion Matrix
+[13, 0, 0, 0, 0, 0, 0, 1]
+[0, 12, 0, 0, 0, 0, 0, 0]
+[0, 0, 15, 0, 0, 0, 1, 0]
+[0, 0, 0, 12, 2, 0, 0, 1]
+[0, 0, 0, 0, 8, 0, 0, 0]
+[0, 0, 0, 0, 1, 18, 0, 0]
+[0, 0, 0, 0, 0, 2, 11, 0]
+[0, 0, 0, 0, 0, 0, 0, 14]
+Percentage of correct classes:50.0 %
+----------------------------------------
+Number of Inputs:111
+Wrong Classifications   :9.0
+Percentage wrong classifications:8.108108108108109%
+-----
+Confusion Matrix
+[9, 0, 0, 0, 1, 0, 0, 0]
+[0, 13, 0, 0, 0, 0, 0, 0]
+[0, 0, 10, 0, 0, 1, 0, 0]
+[0, 1, 0, 11, 0, 0, 0, 1]
+[0, 0, 0, 0, 12, 0, 0, 0]
+[0, 1, 0, 0, 1, 13, 1, 0]
+[0, 0, 0, 0, 0, 2, 15, 0]
+[0, 0, 0, 0, 0, 0, 0, 19]
+Percentage of correct classes:37.5 %
+----------------------------------------
+Number of Inputs:111
+Wrong Classifications   :8.0
+Percentage wrong classifications:7.207207207207207%
+-----
+Confusion Matrix
+[13, 0, 0, 0, 0, 0, 0, 0]
+[0, 17, 0, 0, 0, 0, 0, 0]
+[0, 0, 11, 0, 0, 0, 0, 0]
+[0, 1, 0, 10, 1, 0, 0, 0]
+[0, 0, 0, 0, 17, 1, 0, 0]
+[0, 0, 0, 0, 0, 9, 0, 0]
+[0, 0, 0, 0, 0, 2, 14, 0]
+[0, 0, 0, 3, 0, 0, 0, 12]
+Percentage of correct classes:50.0 %
+----------------------------------------
+Number of Inputs:111
+Wrong Classifications   :10.0
+Percentage wrong classifications:9.00900900900901%
+-----
+Confusion Matrix
+[13, 0, 0, 0, 1, 0, 0, 0]
+[0, 13, 0, 0, 0, 1, 0, 0]
+[0, 0, 19, 0, 0, 0, 0, 0]
+[0, 0, 0, 9, 1, 0, 0, 3]
+[1, 0, 0, 0, 17, 1, 0, 0]
+[0, 1, 0, 0, 0, 8, 1, 0]
+[0, 0, 0, 0, 0, 0, 11, 0]
+[0, 0, 0, 0, 0, 0, 0, 11]
+Percentage of correct classes:25.0 %
+----------------------------------------
+Number of Inputs:111
+Wrong Classifications   :7.0
+Percentage wrong classifications:6.306306306306306%
+-----
+Confusion Matrix
+[13, 0, 0, 0, 2, 0, 0, 0]
+[0, 9, 0, 0, 0, 0, 0, 0]
+[0, 0, 16, 0, 0, 0, 0, 0]
+[0, 0, 0, 12, 0, 0, 1, 1]
+[0, 0, 0, 1, 12, 0, 0, 0]
+[0, 0, 0, 0, 0, 13, 0, 0]
+[0, 0, 0, 0, 0, 1, 13, 0]
+[1, 0, 0, 0, 0, 0, 0, 16]
+Percentage of correct classes:25.0 %
+----------------------------------------
+Number of Inputs:111
+Wrong Classifications   :9.0
+Percentage wrong classifications:8.108108108108109%
+-----
+Confusion Matrix
+[14, 0, 0, 0, 1, 0, 0, 0]
+[0, 17, 0, 0, 0, 0, 0, 0]
+[0, 0, 14, 0, 0, 0, 0, 0]
+[0, 0, 0, 5, 4, 0, 0, 1]
+[0, 0, 0, 0, 14, 1, 0, 0]
+[0, 0, 0, 0, 0, 8, 1, 0]
+[0, 0, 0, 0, 0, 1, 13, 0]
+[0, 0, 0, 0, 0, 0, 0, 17]
+Percentage of correct classes:50.0 %
+----------------------------------------
+Number of Inputs:111
+Wrong Classifications   :7.0
+Percentage wrong classifications:6.306306306306306%
+-----
+Confusion Matrix
+[17, 0, 0, 0, 0, 0, 0, 0]
+[0, 10, 0, 0, 0, 0, 0, 0]
+[0, 0, 13, 0, 0, 0, 0, 0]
+[0, 1, 0, 12, 1, 0, 1, 1]
+[1, 0, 0, 0, 10, 0, 0, 0]
+[0, 1, 0, 0, 0, 12, 0, 0]
+[0, 0, 0, 0, 0, 1, 12, 0]
+[0, 0, 0, 0, 0, 0, 0, 18]
+Percentage of correct classes:25.0 %
+----------------------------------------
+Number of Inputs:111
+Wrong Classifications   :11.0
+Percentage wrong classifications:9.90990990990991%
+-----
+Confusion Matrix
+[9, 0, 0, 0, 0, 0, 0, 0]
+[0, 13, 0, 0, 0, 0, 0, 0]
+[0, 0, 17, 0, 0, 0, 0, 0]
+[0, 0, 0, 15, 2, 0, 0, 2]
+[0, 0, 0, 1, 10, 0, 0, 0]
+[0, 0, 0, 0, 1, 8, 2, 0]
+[0, 0, 0, 0, 0, 0, 14, 0]
+[1, 0, 1, 1, 0, 0, 0, 14]
+Percentage of correct classes:25.0 %
+----------------------------------------
+Number of Inputs:111
+Wrong Classifications   :8.0
+Percentage wrong classifications:7.207207207207207%
+-----
+Confusion Matrix
+[12, 0, 0, 0, 0, 0, 0, 0]
+[0, 16, 0, 0, 0, 0, 0, 0]
+[0, 0, 15, 0, 0, 0, 1, 0]
+[0, 0, 1, 11, 2, 0, 0, 0]
+[2, 0, 0, 0, 9, 0, 0, 0]
+[0, 1, 0, 0, 0, 11, 0, 0]
+[0, 0, 0, 0, 0, 0, 18, 0]
+[0, 0, 0, 1, 0, 0, 0, 11]
+Percentage of correct classes:25.0 %

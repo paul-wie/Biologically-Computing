@@ -28,7 +28,7 @@ class mlp:
             targets = rand[1]
             error_validation.append(0)
             error_training.append(0)
-            iterations = 100
+            iterations = 10
             #-----------------------------------------------------------------------------------
             #training, one iteration through the input data set
             for i in range(iterations):
@@ -164,3 +164,16 @@ class mlp:
         print("x: Correct classes")
         print("y: Classified classes")
         print("Percentage of correct classes:", str(percetage_correct_classes(confusion_matrix)) + " %")
+
+        #write to file
+        f = open("mlp_24_hidden_nodes.txt", "a")
+        f.write("----------------------------------------"+ "\n")
+        f.write("Number of Inputs:" + str(len(inputs)) + "\n")
+        f.write("Wrong Classifications   :" + str(wrong_classifications)+ "\n")
+        f.write("Percentage wrong classifications:" + str(wrong_classifications/len(inputs)*100) + "%" + "\n")
+        f.write("-----"+ "\n")
+        f.write("Confusion Matrix"+ "\n")
+        for row in confusion_matrix:
+            f.write(str(row)+ "\n")
+        f.write("Percentage of correct classes:" + str(percetage_correct_classes(confusion_matrix)) + " %"+ "\n")
+        f.close
