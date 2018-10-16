@@ -74,7 +74,7 @@ class mlp:
         plt.legend(loc='upper right')
         plt.ylabel("Classification Error")
         plt.xlabel("Number of epochs ( " + str(iterations) + " iterations in each epoch)")
-        plt.savefig("multi_layer_perceptron.png", format="png")
+        #plt.savefig("multi_layer_perceptron.png", format="png")
         #plt.show()
         print("----------------------------------------------------------------------------")
 
