@@ -138,6 +138,7 @@ class mlp:
 
     def confusion(self, inputs, targets):
         wrong_classifications = 0
+        write_to_file = False
         confusion_matrix = build_confusion_matrix(len(targets[0]))
 
         for inp,tar in zip(inputs,targets):
@@ -166,14 +167,15 @@ class mlp:
         print("Percentage of correct classes:", str(percetage_correct_classes(confusion_matrix)) + " %")
 
         #write to file
-        f = open("mlp_24_hidden_nodes.txt", "a")
-        f.write("----------------------------------------"+ "\n")
-        f.write("Number of Inputs:" + str(len(inputs)) + "\n")
-        f.write("Wrong Classifications   :" + str(wrong_classifications)+ "\n")
-        f.write("Percentage wrong classifications:" + str(wrong_classifications/len(inputs)*100) + "%" + "\n")
-        f.write("-----"+ "\n")
-        f.write("Confusion Matrix"+ "\n")
-        for row in confusion_matrix:
-            f.write(str(row)+ "\n")
-        f.write("Percentage of correct classes:" + str(percetage_correct_classes(confusion_matrix)) + " %"+ "\n")
-        f.close
+        if write_to_file == True:
+            f = open("mlp_24_hidden_nodes.txt", "a")
+            f.write("----------------------------------------"+ "\n")
+            f.write("Number of Inputs:" + str(len(inputs)) + "\n")
+            f.write("Wrong Classifications   :" + str(wrong_classifications)+ "\n")
+            f.write("Percentage wrong classifications:" + str(wrong_classifications/len(inputs)*100) + "%" + "\n")
+            f.write("-----"+ "\n")
+            f.write("Confusion Matrix"+ "\n")
+            for row in confusion_matrix:
+                f.write(str(row)+ "\n")
+            f.write("Percentage of correct classes:" + str(percetage_correct_classes(confusion_matrix)) + " %"+ "\n")
+            f.close

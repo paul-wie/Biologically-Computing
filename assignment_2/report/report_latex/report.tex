@@ -30,7 +30,7 @@
 		Figure 2: Multilayer Perceptron for our problem \footnote{https://www.uio.no/studier/emner/matnat/ifi/INF3490/h18/assignments/assignment-2/assignment\_2.pdf}
 		\\
 	\end{center}
-	We build a Multilayer Perceptron with 40 entry nodes, that means one node for each input. Then there is one hidden layer with a various number of hidden nodes. For classifying the input, there are 8 output nodes corresponding to the 8 hand motions. We only use one hidden layer to solve this problem.
+	We build a Multilayer Perceptron with 40 entry nodes, that means one node for each input. Then, there is one hidden layer with a various number of hidden nodes. For classifying the input, there are 8 output nodes corresponding to the 8 hand motions. We only use one hidden layer to solve this problem.
 
 	\subsection{Training Data}							%training data
 	For each input vector:
@@ -49,7 +49,11 @@
 	That means, forwarding the input should result in the given target vector. 
 	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%		%IMPLEMENTATION
 	\section{Implementation}
-	The file \textit{mlp.py} contains the class mlp. There are 5 functions that i will explain in detail.
+	The file \textit{mlp.py} contains the class mlp. In \textit{operations.py} are implemented some general functions to test them easily.
+	To run the Multilayer Perceptron just execute the file(python3):
+	\begin{center}
+			\textit{python3 movements.py}
+	\end{center}
 	\subsection{Initialization}								%initalization
 	The function \textit{ \_\_init\_\_(self, inputs, targets, nhidden)} has three important parameter that we need to initialize the Multilayer Perceptron. \\
 	As the input data is given as a vector, it is a good choice to create two 2D-Array for the two weight layers. As the parameters \textit{inputs} and \textit{targets} have the type \textit{$<$class 'numpy.ndarray'$>$}, it is a good idea to work only with numpy arrays. \\
@@ -62,7 +66,7 @@
 			 \textit{weight\_matrix\_1} \in \mathbb{R}^{41 \times nhidden} 
 			\end{equation} 
 			\\
-			 $w_{i,j} \in weight\_matrix\_1, w_{i,j}$: weight between input node(i) and hidden node(j) 
+			 $w_{i,j} \in weight\_matrix\_1, w_{i,j}$: weight between input/bias node(i) and hidden node(j) 
 		\end{center}
 		\item weight\_matrix\_2: \\
 		There are \textit{nhidden} hidden nodes and 8 exit nodes. So we also need to take into account the \textit{bias\_value -1}. That means: \\
@@ -71,13 +75,13 @@
 			\textit{weight\_matrix\_2} \in \mathbb{R}^{(nhidden+1) \times 8} 
 			\end{equation}
 			\\
-			$w_{i,j} \in weight\_matrix\_1, w_{i,j}$: weight between hidden node(i) and output node(j)  
+			$w_{i,j} \in weight\_matrix\_1, w_{i,j}$: weight between hidden/bias node(i) and output node(j)  
 		\end{center}
 	\end{itemize} 
 	Both, \textit{weigh\_matrix\_1} and \textit{weigh\_matrix\_2}, will be initialized randomly with values in [-1,1].
 	
 	\subsection{Forward}								%forward
-	The forward function takes one input vector and runs it on the network. At first, the input vector must be expanded. The reason for this is that we have to take into account the bias value:	
+	The forward function takes one input vector and runs it on the network. At first, the input vector must be expanded by -1. The reason for this is that we have to take into account the bias value:	
 	\begin{center}
 		\begin{equation}
 		\textit{input} \in \mathbb{R}^{1\times 41} 
@@ -98,7 +102,7 @@
 	\end{center}
 	This operation is done by the function \textit{ vec\_matr\_mult()} (that function can be found in the file \textit{operations.py}) that is doing a vector matrix multiplication with two for-loops. \\
 	\subsubsection{Activation Function}
-	After that is the activation function applied to all hidden nodes:
+	After that is the activation function applied to all hidden nodes, as well to the bias node:
 	\begin{center}
 		\begin{equation}
 		a_{\zeta} = h_{new, i} = \frac{1}{1 + \ exp(-\beta h_i)} 
@@ -106,7 +110,7 @@
 		\\ (\textit{apply\_sigmoid\_activation()} in \textit{operations.py})
 	\end{center}
 	\subsubsection{Forward Phase 2}
-	The result \textit{hidden\_values} is also expanded by the bias -1: 
+	The result \textit{hidden\_values} is therefor: 
 	\begin{center}
 		\begin{equation}
 		\textit{hidden\_activation} \in \mathbb{R}^{1\times (nhidden +1)} 
@@ -161,7 +165,7 @@
 		\item $ w_{\zeta} \in \textit{weight\_matrix\_2}$, see (4)
 		\item $ \delta_o(k) \ in \textit{output\_error} $, see (11)
 	\end{itemize}
-	So, $w_{\zeta}$ is the weight that connects the hidden node with activation $a_{\zeta}$ and the output node with output-error $\delta_o(k)$.
+	So, $w_{\zeta}$ is the weight that connects a hidden node, with activation $a_{\zeta}$, and a output node with output-error $\delta_o(k)$.
 	\subsection{Train the network}				%%%%%%%%%%%%%%%%%train the network
 	To train the network means to backpropagate the errors we that we have calculated in 2.2.4 and 2.3. So the weights of \textit{weight\_matrix\_1} and \textit{weight\_matrix\_2} will be adjusted by the following formula:
 	\begin{center}
@@ -202,6 +206,8 @@
  	
  	\section{Results}						%%%%%%%%%%%%%%%%RESULTS
  	The network will be tuned and forwarded to evaluate and compare the results. All tests are made with 10 iterations in each epoch. For each number of nodes were made 10 tests because the random initialization of the weight matrices can influence the quality of the result.
+ 	\\
+ 	I defined a correct class as a class that has no wrong classifications.
  	\subsection{Hidden Nodes: 6}
  	\begin{center}
  		$ confusion\_matrix = \begin{bmatrix}
@@ -272,7 +278,11 @@
  	For more results see the file \textit{mlp\_18\_hidden\_nodes.txt}			  
 	 
 	\subsection{Conclusion}						%%%%%%%%%CONCLUSION
-	As you can in the files the results differ sometimes more, sometimes less. The reason for this behavior is that the weight are initialized randomly. So the network will be trained non-deterministic. \\
+	As you can see in the files the results differ sometimes more, sometimes less. The reason for this behavior is that the weight are initialized randomly. So the network will be trained non-deterministic. \\
 	So when we take a look on a common result like in 3.1, 3.2 and 3.3 we can see, that a network with 6 and 18 hidden node gives us very similar results. The number of wrong classified vectors is very similar. But there is also a difference. When I run a network with 18 nodes, it is common to get confusion-matrices with 25 \% correct classes. For 6 hidden nodes it is more like 37.5 \%. That means when we use 18 hidden nodes, the result is not really better, but the failures are more spread to all classes. \\
-	The best result, I think, is produces a network with 12 hidden layers. The confusion matrices are having the highest percentage of correct classifications. The total wrong classifications is in many results also very low.   
+	The best result, I think, is produces a network with 12 hidden layers. The confusion matrices are having the highest percentage of correct classifications. The total wrong classifications is in many results also very low (See 3.2).
+	\\
+	\\
+	When we look at the confusing tables (\textit{mlp\_6\_hidden\_nodes.txt},\textit{mlp\_12\_hidden\_nodes.txt} and \textit{mlp\_18\_hidden\_nodes.txt}) we see, that there are three classes that are really often mistaken. Classes 4,5 and 6 have the most wrong classifications.
+	
 \end{document}
