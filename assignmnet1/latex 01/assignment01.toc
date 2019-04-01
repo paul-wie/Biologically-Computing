@@ -1,0 +1,37 @@
+\contentsline {section}{\numberline {1}General}{3}
+\contentsline {section}{\numberline {2}Exhaustive Search}{3}
+\contentsline {subsection}{\numberline {2.1}Code Overview}{3}
+\contentsline {subsection}{\numberline {2.2}Use the program}{4}
+\contentsline {subsubsection}{\numberline {2.2.1}Run the program}{4}
+\contentsline {subsubsection}{\numberline {2.2.2}Change parameter}{4}
+\contentsline {subsection}{\numberline {2.3}Questions}{5}
+\contentsline {subsubsection}{\numberline {2.3.1}Subset of 6 cities}{5}
+\contentsline {subsubsection}{\numberline {2.3.2}Incrementally add more cities}{5}
+\contentsline {subsubsection}{\numberline {2.3.3}Subset of 10 cities}{5}
+\contentsline {subsubsection}{\numberline {2.3.4}Subset of 24 cities (expectation)}{6}
+\contentsline {section}{\numberline {3}Hill Climbing}{6}
+\contentsline {subsection}{\numberline {3.1}Code Overview}{7}
+\contentsline {subsection}{\numberline {3.2}Use the program}{7}
+\contentsline {subsubsection}{\numberline {3.2.1}Run the program}{7}
+\contentsline {subsubsection}{\numberline {3.2.2}Change parameter}{7}
+\contentsline {subsection}{\numberline {3.3}Questions}{8}
+\contentsline {subsubsection}{\numberline {3.3.1}Compare hill climbing to exhaustive search (10 cities)}{8}
+\contentsline {subsubsection}{\numberline {3.3.2}Result 10 Cities, 20 runs}{8}
+\contentsline {subsubsection}{\numberline {3.3.3}Result 24 Cities, 20 runs}{8}
+\contentsline {section}{\numberline {4}Genetic Algorithm}{8}
+\contentsline {subsection}{\numberline {4.1}General}{8}
+\contentsline {subsection}{\numberline {4.2}Code overview}{9}
+\contentsline {subsection}{\numberline {4.3}Use the program}{10}
+\contentsline {subsubsection}{\numberline {4.3.1}Run the program}{10}
+\contentsline {subsubsection}{\numberline {4.3.2}Change parameter}{10}
+\contentsline {subsection}{\numberline {4.4}Results of changing parameter}{11}
+\contentsline {subsubsection}{\numberline {4.4.1}Crossover Rate, Permutation Rate}{11}
+\contentsline {subsubsection}{\numberline {4.4.2}Number of Elite Survivor}{11}
+\contentsline {subsubsection}{\numberline {4.4.3}Number of Generations}{11}
+\contentsline {subsubsection}{\numberline {4.4.4}Size of Population, 3 different sizes (Average across runs)}{12}
+\contentsline {subsubsection}{\numberline {4.4.5}Tournament size}{13}
+\contentsline {subsubsection}{\numberline {4.4.6}Number of tournament winner}{13}
+\contentsline {subsection}{\numberline {4.5}Questions}{13}
+\contentsline {subsubsection}{\numberline {4.5.1}Result 6 Cities, 20 runs}{13}
+\contentsline {subsubsection}{\numberline {4.5.2}Result 10 Cities, 20 runs}{14}
+\contentsline {subsubsection}{\numberline {4.5.3}Result 24 Cities, 20 runs}{14}
